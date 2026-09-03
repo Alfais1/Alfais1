@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  <code>I build tools that turn messy real-world data into something you can actually reason about:</code><br/>
-  <code>trading desks · government personnel graphs · archive search · tutor bots · personal dashboards</code>
+  <code>I build stuff that I think, will make life easier:</code><br/>
+  <code>trading desks · government personnel graphs · archive search · autonomous bots · personal hobby project</code>
 </p>
 
 <img src="assets/divider.svg" width="100%" alt=""/>
@@ -89,4 +89,4 @@
 
 </details>
 
-<img src="assets/footer.svg" width="100%" alt="see you, choom"/>
+<img src="assets/footer.svg" width="100%" alt="see you, "/>
