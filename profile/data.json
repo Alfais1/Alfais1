@@ -3,24 +3,24 @@
   "name": null,
   "url": "https://github.com/Alfais1",
   "since": "2024",
-  "fetchedAt": "2026-09-03T13:03:39.722Z",
+  "fetchedAt": "2026-09-03T13:04:05.137Z",
   "all": {
-    "commits": 1,
-    "prs": 0,
+    "commits": 112,
+    "prs": 2,
     "issues": 0,
     "reviews": 0,
-    "private": 129,
+    "private": 0,
     "contributions": 132
   },
   "lastYear": {
     "contributions": 103,
-    "commits": 1,
-    "private": 101
+    "commits": 84,
+    "private": 0
   },
   "repos": {
-    "total": 1,
-    "private": 0,
-    "stars": 0
+    "total": 19,
+    "private": 18,
+    "stars": 4
   },
   "weeks": [
     [
@@ -1975,5 +1975,72 @@
       }
     ]
   ],
-  "languages": []
+  "languages": [
+    {
+      "name": "TypeScript",
+      "color": "#3178c6",
+      "size": 5906601,
+      "pct": 34.01712155281977
+    },
+    {
+      "name": "Python",
+      "color": "#3572A5",
+      "size": 5692375,
+      "pct": 32.7833575180095
+    },
+    {
+      "name": "TeX",
+      "color": "#3D6117",
+      "size": 2607276,
+      "pct": 15.01574672366556
+    },
+    {
+      "name": "BibTeX Style",
+      "color": "#8A8A9C",
+      "size": 938916,
+      "pct": 5.407377220822488
+    },
+    {
+      "name": "HTML",
+      "color": "#e34c26",
+      "size": 819678,
+      "pct": 4.720665262504138
+    },
+    {
+      "name": "JavaScript",
+      "color": "#f1e05a",
+      "size": 506898,
+      "pct": 2.9193119496104845
+    },
+    {
+      "name": "CSS",
+      "color": "#663399",
+      "size": 448091,
+      "pct": 2.5806324168036006
+    },
+    {
+      "name": "Shell",
+      "color": "#89e051",
+      "size": 229271,
+      "pct": 1.320410753246502
+    },
+    {
+      "name": "PLpgSQL",
+      "color": "#336790",
+      "size": 197660,
+      "pct": 1.1383576182190664
+    },
+    {
+      "name": "Batchfile",
+      "color": "#C1F12E",
+      "size": 10522,
+      "pct": 0.060597990786709584
+    },
+    {
+      "name": "Makefile",
+      "color": "#427819",
+      "size": 6324,
+      "pct": 0.03642099351217938
+    }
+  ]
 }
