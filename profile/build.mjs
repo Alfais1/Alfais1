@@ -38,7 +38,7 @@ async function fetchData(login) {
     `query($login:String!){ user(login:$login){ id name login url createdAt
       contributionsCollection{ contributionYears }
       repositories(first:100, ownerAffiliations:OWNER, orderBy:{field:PUSHED_AT,direction:DESC}){
-        totalCount nodes{ name isPrivate isFork stargazerCount
+        totalCount nodes{ name isPrivate isFork stargazerCount description url pushedAt primaryLanguage{ name color }
           languages(first:10, orderBy:{field:SIZE,direction:DESC}){ edges{ size node{ name color } } } } } } }`,
     { login },
   );
@@ -111,6 +111,10 @@ async function fetchData(login) {
       private: year.restrictedContributionsCount,
     },
     repos: { total: u.repositories.totalCount, private: u.repositories.nodes.filter((r) => r.isPrivate).length, stars },
+    repoList: u.repositories.nodes.filter((r) => !r.isFork).map((r) => ({
+      name: r.name, url: r.url, isPrivate: r.isPrivate, description: r.description || "", pushedAt: r.pushedAt,
+      language: r.primaryLanguage?.name || "", color: r.primaryLanguage?.color || T.muted,
+    })),
     weeks,
     languages,
   };
@@ -164,9 +168,11 @@ function corners(w, h, c = T.yellow, l = 14, inset = 8) {
 <path d="M${i} ${h - i - l}v${l}h${l}"/><path d="M${w - i - l} ${h - i}h${l}v-${l}"/></g>`;
 }
 
+// monospace advance is 0.55–0.60em in every common mono font; 0.62 keeps the forced spacing positive
+const tw = (txt, size, ls) => String(txt).length * size * 0.62 + Math.max(0, String(txt).length - 1) * ls;
 const label = (x, y, txt, opts = {}) => {
   const { size = 11, fill = T.muted, weight = 500, anchor = "start", ls = 1.5, extra = "" } = opts;
-  return `<text x="${x}" y="${y}" font-size="${size}" fill="${fill}" font-weight="${weight}" text-anchor="${anchor}" letter-spacing="${ls}" ${extra}>${esc(txt)}</text>`;
+  return `<text x="${x}" y="${y}" font-size="${size}" fill="${fill}" font-weight="${weight}" text-anchor="${anchor}" letter-spacing="${ls}" textLength="${tw(txt, size, ls).toFixed(1)}" lengthAdjust="spacing" ${extra}>${esc(txt)}</text>`;
 };
 
 const chip = (x, y, txt, color = T.cyan, size = 10) => {
@@ -180,16 +186,19 @@ ${label(x + w / 2, y + size + 2.5, txt, { size, fill: color, anchor: "middle", l
 
 // SMIL that holds at `from` for `delay`s, then eases to `to`. Put the FINAL value in the
 // static attribute so a renderer without SMIL support still shows finished bars/numbers.
-const grow = (attr, from, to, delay, dur) => {
+// Cards are static on purpose: Chrome restarts SMIL inside <img> every time it re-decodes an
+// off-screen image, so entrance animations on cards replay on every scroll. Only the banner animates.
+const growAlways = (attr, from, to, delay, dur) => {
   const total = delay + dur, k = Math.max(0.01, delay / total).toFixed(3);
   return `<animate attributeName="${attr}" values="${from};${from};${to}" keyTimes="0;${k};1" dur="${total.toFixed(2)}s" begin="0s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;0.2 0.8 0.2 1"/>`;
 };
+const grow = (...a) => (cfg.cardAnimations ? growAlways(...a) : "");
 
 // title row used on every card: "// NAME" + trailing hairline
 function cardTitle(w, txt, right = "") {
-  const tw = txt.length * 13 * 0.62;
+  const t = tw(txt, 13, 2.5);
   return `${label(20, 30, txt, { size: 13, fill: T.yellow, weight: 700, ls: 2.5 })}
-<line x1="${28 + tw}" y1="26" x2="${right ? w - (right.length * 6.4 + 60) : w - 20}" y2="26" stroke="${T.line}"/>
+<line x1="${(20 + t + 12).toFixed(1)}" y1="26" x2="${right ? (w - 20 - tw(right, 9, 1.5) - 12).toFixed(1) : w - 20}" y2="26" stroke="${T.line}"/>
 ${right ? label(w - 20, 30, right, { size: 9, fill: T.cyan, anchor: "end", ls: 1.5 }) : ""}`;
 }
 
@@ -280,22 +289,21 @@ function banner() {
     <text x="72" y="258" font-size="20" fill="${T.cyan}" textLength="${tagW}" lengthAdjust="spacingAndGlyphs">${esc(tag)}</text>
   </g>
   <rect x="${74 + tagW}" y="240" width="11" height="22" fill="${T.cyan}">
-    ${grow("x", 74, 74 + tagW, 0.5, 2.6)}
+    ${growAlways("x", 74, 74 + tagW, 0.5, 2.6)}
     <animate attributeName="opacity" values="1;1;0;0" dur="1s" repeatCount="indefinite"/>
   </rect>
 </g>
-<line x1="72" y1="292" x2="${72 + 56}" y2="292" stroke="${T.yellow}" stroke-width="2"/>
-<line x1="${72 + 62}" y1="292" x2="${72 + 62 + 320}" y2="292" stroke="${T.line}" stroke-width="1"/>
+<line x1="72" y1="290" x2="${72 + 56}" y2="290" stroke="${T.yellow}" stroke-width="2"/>
 </g>`;
 
   const hud = `
 ${label(72, 46, `SYS.PROFILE // ${data.login.toUpperCase()}`, { size: 11, fill: T.muted })}
-${label(72, 64, cfg.location, { size: 11, fill: T.dim })}
+${label(72, 64, cfg.location, { size: 11, fill: T.muted })}
 <rect x="${1128 - Math.max(cfg.coords.length, 10) * 8.2 - 12}" y="34" width="${Math.max(cfg.coords.length, 10) * 8.2 + 22}" height="38" rx="4" fill="${T.bg}" fill-opacity="0.72"/>
 ${label(1128, 46, cfg.coords, { size: 11, fill: T.muted, anchor: "end" })}
 ${label(1128, 64, `SINCE ${data.since}`, { size: 11, fill: T.dim, anchor: "end" })}
 <g transform="translate(72 ${H - 34})">
-  <circle cx="0" cy="-4" r="4" fill="${T.green}"><animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite"/></circle>
+  <circle cx="0" cy="-4" r="4" fill="${T.green}"/>
   ${label(12, 0, "ONLINE", { size: 11, fill: T.green })}
   ${label(84, 0, `CONTRIBUTIONS ${fmt(data.all.contributions)}`, { size: 11, fill: T.muted })}
   ${label(84 + (`CONTRIBUTIONS ${fmt(data.all.contributions)}`.length + 3) * 8.2, 0, `REPOS ${data.repos.total}`, { size: 11, fill: T.muted })}
@@ -316,7 +324,7 @@ ${scanDef}
 <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75"><stop offset="0.6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.55"/></radialGradient>
 <linearGradient id="readable" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${T.wash}" stop-opacity="${dk}"/><stop offset="0.4" stop-color="${T.wash}" stop-opacity="${(dk * 0.55).toFixed(2)}"/><stop offset="0.62" stop-color="${T.wash}" stop-opacity="0"/></linearGradient>
 <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0.72" stop-color="${T.wash}" stop-opacity="0"/><stop offset="1" stop-color="${T.wash}" stop-opacity="0.8"/></linearGradient>
-<clipPath id="typeClip"><rect x="72" y="236" width="${tagW + 4}" height="30">${grow("width", 0, tagW + 4, 0.5, 2.6)}</rect></clipPath>
+<clipPath id="typeClip"><rect x="72" y="236" width="${tagW + 4}" height="30">${growAlways("width", 0, tagW + 4, 0.5, 2.6)}</rect></clipPath>
 <clipPath id="slice"><rect x="60" y="150" width="600" height="18"/></clipPath>`;
 
   const style = `
@@ -345,7 +353,6 @@ ${scene}
 ${title}
 ${hud}
 ${corners(W, H, T.yellow, 18, 14)}
-<rect x="0" y="-70" width="${W}" height="70" fill="url(#beam)"><animate attributeName="y" from="-70" to="${H}" dur="9s" repeatCount="indefinite"/></rect>
 ${scanOverlay(W, H)}`;
   return svg(W, H, body, defs, style);
 }
@@ -379,7 +386,6 @@ ${label(300, y, fmt(v), { size: 11, fill: T.text, anchor: "end", ls: 0.5 })}`;
 <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${T.cyan}" stroke-width="6" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${(C * (1 - frac)).toFixed(1)}" transform="rotate(-90 ${cx} ${cy})">
   ${grow("stroke-dashoffset", C, (C * (1 - frac)).toFixed(1), 0.3, 1.4)}
 </circle>
-<circle cx="${cx}" cy="${cy}" r="${r + 9}" fill="none" stroke="${T.cyan}" stroke-opacity="0.25" stroke-dasharray="2 6"><animateTransform attributeName="transform" type="rotate" from="0 ${cx} ${cy}" to="360 ${cx} ${cy}" dur="30s" repeatCount="indefinite"/></circle>
 ${label(cx, cy + 6, String(data.streak.current), { size: 28, fill: T.text, weight: 700, anchor: "middle", ls: 0 })}
 ${label(cx, cy + 22, "DAY STREAK", { size: 8, fill: T.muted, anchor: "middle" })}
 ${label(cx, cy + 74, `LONGEST ${data.streak.longest}D`, { size: 9, fill: T.dim, anchor: "middle" })}`;
@@ -388,7 +394,7 @@ ${label(cx, cy + 74, `LONGEST ${data.streak.longest}D`, { size: 9, fill: T.dim, 
 ${frame(W, H)}
 ${cardTitle(W, "// STATS", "INCL. PRIVATE")}
 ${label(20, 84, fmt(data.all.contributions), { size: 40, fill: T.yellow, weight: 800, ls: -1 })}
-${label(20, 102, `CONTRIBUTIONS · ALL TIME · ${fmt(data.all.private)} PRIVATE`, { size: 9, fill: T.muted })}
+${label(20, 102, "CONTRIBUTIONS · ALL TIME · PRIVATE INCLUDED", { size: 9, fill: T.muted })}
 ${list}
 ${ring}
 ${corners(W, H, T.cyan, 10, 6)}
@@ -458,10 +464,9 @@ function heatmap() {
   const legend = cols.map((c, i) => `<rect x="${W - 56 - (5 - i) * 17}" y="${H - 22}" width="${cell}" height="${cell}" rx="2.5" fill="${c}"/>`).join("");
   const body = `
 ${frame(W, H)}
-${cardTitle(W, "// ACTIVITY · LAST 12 MONTHS", `${fmt(data.lastYear.contributions)} CONTRIBUTIONS · ${fmt(data.lastYear.private)} PRIVATE`)}
+${cardTitle(W, "// ACTIVITY · LAST 12 MONTHS", `${fmt(data.lastYear.contributions)} CONTRIBUTIONS`)}
 ${months}${days}${grid}
 ${label(W - 56 - 5 * 17 - 8, H - 12, "LESS", { size: 9, fill: T.dim, anchor: "end" })}${legend}${label(W - 18, H - 12, "MORE", { size: 9, fill: T.dim, anchor: "end" })}
-<rect x="${left}" y="${top - 4}" width="2" height="${7 * step}" fill="${T.cyan}" opacity="0"><animate attributeName="x" from="${left}" to="${left + weeks.length * step}" dur="2.2s" begin="0s" fill="freeze"/><animate attributeName="opacity" values="0.7;0.7;0" dur="2.2s" fill="freeze"/></rect>
 ${corners(W, H, T.cyan, 10, 6)}
 ${scanOverlay(W, H)}`;
   return svg(W, H, body, scanDef);
@@ -479,7 +484,7 @@ function projectCard(p, i) {
   const status = `
 <g transform="translate(${W - 20} 30)">
   ${label(-14, 0, live ? "LIVE" : "PRIVATE", { size: 9, fill: statusC, anchor: "end" })}
-  <circle cx="-4" cy="-3.5" r="3.5" fill="${statusC}">${live ? `<animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite"/>` : ""}</circle>
+  <circle cx="-4" cy="-3.5" r="3.5" fill="${statusC}"/>
 </g>`;
   const host = p.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
   const body = `
@@ -492,7 +497,6 @@ ${desc}
 ${chips}
 ${label(W - 20, H - 14, host, { size: 9, fill: T.dim, anchor: "end", ls: 0.5 })}
 ${label(20, H - 14, "OPEN ↗", { size: 9, fill: T.cyan })}
-<rect x="0" y="0" width="0" height="2" fill="${T.cyan}" opacity="0.8"><animate attributeName="width" values="0;${W};${W}" dur="6s" begin="${(i * 0.6).toFixed(1)}s" repeatCount="indefinite" keyTimes="0;0.25;1"/><animate attributeName="opacity" values="0.8;0.8;0" dur="6s" begin="${(i * 0.6).toFixed(1)}s" repeatCount="indefinite" keyTimes="0;0.25;1"/></rect>
 ${corners(W, H, T.yellow, 10, 6)}
 ${scanOverlay(W, H)}`;
   return svg(W, H, body, scanDef);
@@ -505,8 +509,8 @@ function header(idx, txt) {
 <rect width="${W}" height="${H}" fill="${T.bg}"/>
 ${label(0, 30, `${idx}`, { size: 12, fill: T.dim, weight: 700 })}
 ${label(30, 30, `// ${txt}`, { size: 18, fill: T.yellow, weight: 800, ls: 4 })}
-<line x1="${30 + (txt.length + 3) * 13.2}" y1="26" x2="${W}" y2="26" stroke="${T.line}"/>
-<rect x="${30 + (txt.length + 3) * 13.2}" y="25" width="60" height="2" fill="${T.cyan}">${grow("width", 0, 60, 0.2, 0.8)}</rect>`;
+<line x1="${(30 + tw("// " + txt, 18, 4) + 14).toFixed(1)}" y1="26" x2="${W}" y2="26" stroke="${T.line}"/>
+<rect x="${(30 + tw("// " + txt, 18, 4) + 14).toFixed(1)}" y="25" width="60" height="2" fill="${T.cyan}">${grow("width", 0, 60, 0.2, 0.8)}</rect>`;
   return svg(W, H, body);
 }
 
@@ -515,21 +519,69 @@ function divider() {
   const body = `
 <rect width="${W}" height="${H}" fill="${T.bg}"/>
 <line x1="0" y1="8" x2="${W}" y2="8" stroke="${T.line}"/>
-<rect x="0" y="7" width="120" height="2" fill="${T.yellow}"><animate attributeName="x" from="-120" to="${W}" dur="5s" repeatCount="indefinite"/></rect>
-<rect x="0" y="7" width="40" height="2" fill="${T.cyan}"><animate attributeName="x" from="-40" to="${W}" dur="5s" begin="1.2s" repeatCount="indefinite"/></rect>`;
+<rect x="0" y="7" width="56" height="2" fill="${T.yellow}"/>`;
   return svg(W, H, body);
 }
 
 function footer() {
   const W = 1000, H = 64;
-  const txt = "SEE YOU, CHOOM.";
   const body = `
 <rect width="${W}" height="${H}" fill="${T.bg}"/>
 <line x1="0" y1="0.5" x2="${W}" y2="0.5" stroke="${T.line}"/>
-${label(W / 2, 34, txt, { size: 13, fill: T.muted, anchor: "middle", ls: 6 })}
-${label(W / 2, 52, `${data.login.toUpperCase()} · SYNCED ${syncDate} · PRIVATE ACTIVITY INCLUDED`, { size: 9, fill: T.dim, anchor: "middle", ls: 2 })}
-<rect x="${W / 2 + (txt.length * (13 * 0.62 + 6)) / 2 + 6}" y="22" width="8" height="14" fill="${T.yellow}"><animate attributeName="opacity" values="1;1;0;0" dur="1.1s" repeatCount="indefinite"/></rect>`;
+${label(20, 38, `${data.login.toUpperCase()} · SYNCED ${syncDate}`, { size: 10, fill: T.muted, ls: 2 })}
+${label(W - 20, 38, "GENERATED FROM THE GITHUB API · PRIVATE ACTIVITY INCLUDED", { size: 10, fill: T.dim, anchor: "end", ls: 1.5 })}`;
   return svg(W, H, body);
+}
+
+// ───────────────────────── about / stack / vault ─────────────────────────
+function about() {
+  const W = 1000, H = 92;
+  const [l1 = "", l2 = ""] = cfg.about;
+  const body = `
+${frame(W, H)}
+${label(W / 2, 40, l1, { size: 14, fill: T.text, anchor: "middle", ls: 0.4 })}
+${label(W / 2, 64, l2, { size: 12, fill: T.cyan, anchor: "middle", ls: 0.8 })}
+${corners(W, H, T.yellow, 10, 6)}
+${scanOverlay(W, H)}`;
+  return svg(W, H, body, scanDef);
+}
+
+function stack() {
+  const W = 1000, groups = Object.entries(cfg.stack);
+  const rowH = 34, left = 150;
+  let y = 52, body = "";
+  for (const [g, items] of groups) {
+    let x = left, rowY = y;
+    body += label(20, rowY + 16, g, { size: 10, fill: T.muted });
+    for (const it of items) {
+      const c = chip(x, rowY, it.toUpperCase(), T.cyan, 10);
+      if (x + c.w > W - 20) { rowY += rowH; x = left; }
+      const c2 = chip(x, rowY, it.toUpperCase(), T.cyan, 10);
+      body += c2.svg; x += c2.w + 8;
+    }
+    y = rowY + rowH + 4;
+  }
+  const H = y + 6;
+  return svg(W, H, `${frame(W, H)}${cardTitle(W, "// STACK", `${groups.reduce((n, [, i]) => n + i.length, 0)} TOOLS`)}${body}${corners(W, H, T.cyan, 10, 6)}${scanOverlay(W, H)}`, scanDef);
+}
+
+function vault() {
+  const W = 1000, rowH = 28;
+  const featured = new Set(projects.map((p) => (p.url.match(/github\.com\/[^/]+\/([^/#?]+)/) || [])[1]).filter(Boolean));
+  const rows = (data.repoList || []).filter((r) => !featured.has(r.name)).sort((a, b) => b.pushedAt.localeCompare(a.pushedAt));
+  const H = 50 + rows.length * rowH + 14;
+  let body = "";
+  rows.forEach((r, i) => {
+    const y = 66 + i * rowH;
+    const desc = r.description ? wrap(r.description, 58, 1)[0] : "—";
+    body += `${label(20, y, r.name, { size: 11, fill: T.text, weight: 700, ls: 0.5 })}
+<rect x="270" y="${y - 8}" width="7" height="7" rx="2" fill="${r.color}"/>
+${label(284, y, r.language || "—", { size: 10, fill: T.muted, ls: 0.5 })}
+${label(400, y, desc, { size: 10, fill: T.muted, ls: 0 })}
+${label(W - 20, y, r.isPrivate ? "PRIVATE" : "PUBLIC", { size: 9, fill: r.isPrivate ? T.magenta : T.green, anchor: "end" })}
+<line x1="20" y1="${y + 9}" x2="${W - 20}" y2="${y + 9}" stroke="${T.lineSoft}"/>`;
+  });
+  return svg(W, H, `${frame(W, H)}${cardTitle(W, "// MORE REPOSITORIES", `${rows.length} MORE · ${data.repos.private} PRIVATE`)}${body}${corners(W, H, T.cyan, 10, 6)}${scanOverlay(W, H)}`, scanDef);
 }
 
 // ───────────────────────── write ─────────────────────────
@@ -543,7 +595,9 @@ const files = {
   "h-projects.svg": header("01", "PROJECTS"),
   "h-stats.svg": header("02", "STATS"),
   "h-stack.svg": header("03", "STACK"),
-  "h-contact.svg": header("04", "CONTACT"),
+  "about.svg": about(),
+  "stack.svg": stack(),
+  "vault.svg": vault(),
 };
 projects.forEach((p, i) => (files[`project-${p.slug}.svg`] = projectCard(p, i)));
 for (const [name, content] of Object.entries(files)) writeFileSync(join(out, name), content);

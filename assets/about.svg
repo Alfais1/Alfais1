@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="92" viewBox="0 0 1000 92" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace" role="img">
+<defs><pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#ffffff" opacity="0.028"/></pattern></defs>
+
+<rect x="0.5" y="0.5" width="999" height="91" rx="8" fill="#0E0E14" stroke="#22222E"/>
+<text x="500" y="40" font-size="14" fill="#EDEDF3" font-weight="500" text-anchor="middle" letter-spacing="0.4" textLength="444.5" lengthAdjust="spacing" >I build stuff that I think will make life easier:</text>
+<text x="500" y="64" font-size="12" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="856.2" lengthAdjust="spacing" >trading desks · government personnel graphs · archive search · autonomous bots · personal hobby projects</text>
+<g stroke="#F5E900" stroke-width="1.5" fill="none" opacity="0.9">
+<path d="M6 16V6h10"/><path d="M984 6h10v10"/>
+<path d="M6 76v10h10"/><path d="M984 86h10v-10"/></g>
+<rect width="1000" height="92" fill="url(#scan)" pointer-events="none"/>
+</svg>

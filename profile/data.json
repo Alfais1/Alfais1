@@ -3,25 +3,198 @@
   "name": null,
   "url": "https://github.com/Alfais1",
   "since": "2024",
-  "fetchedAt": "2026-09-03T13:04:05.137Z",
+  "fetchedAt": "2026-09-03T13:19:28.546Z",
   "all": {
-    "commits": 112,
+    "commits": 113,
     "prs": 2,
     "issues": 0,
     "reviews": 0,
-    "private": 0,
-    "contributions": 132
+    "private": 129,
+    "contributions": 133
   },
   "lastYear": {
-    "contributions": 103,
-    "commits": 84,
-    "private": 0
+    "contributions": 104,
+    "commits": 2,
+    "private": 101
   },
   "repos": {
     "total": 19,
     "private": 18,
     "stars": 4
   },
+  "repoList": [
+    {
+      "name": "Alfais1",
+      "url": "https://github.com/Alfais1/Alfais1",
+      "isPrivate": false,
+      "description": "",
+      "pushedAt": "2026-09-03T13:08:55Z",
+      "language": "JavaScript",
+      "color": "#f1e05a"
+    },
+    {
+      "name": "wonk-demo",
+      "url": "https://github.com/Alfais1/wonk-demo",
+      "isPrivate": true,
+      "description": "WONK archive search demo: hybrid search, citing assistant, scan viewer on Cloudflare",
+      "pushedAt": "2026-09-03T13:06:23Z",
+      "language": "TypeScript",
+      "color": "#3178c6"
+    },
+    {
+      "name": "portfolio",
+      "url": "https://github.com/Alfais1/portfolio",
+      "isPrivate": true,
+      "description": "",
+      "pushedAt": "2026-08-25T12:53:56Z",
+      "language": "TypeScript",
+      "color": "#3178c6"
+    },
+    {
+      "name": "gos",
+      "url": "https://github.com/Alfais1/gos",
+      "isPrivate": true,
+      "description": "Kazakhstan government personnel tracker — appointments, structures, dated co-tenure, private relations layer",
+      "pushedAt": "2026-08-25T12:52:54Z",
+      "language": "JavaScript",
+      "color": "#f1e05a"
+    },
+    {
+      "name": "antipode",
+      "url": "https://github.com/Alfais1/antipode",
+      "isPrivate": true,
+      "description": "ANTIPODE — a quantitative research terminal. Four desks x six functions: portfolio analytics, evaluation harness, portfolio construction, regime detection.",
+      "pushedAt": "2026-08-25T12:49:39Z",
+      "language": "TypeScript",
+      "color": "#3178c6"
+    },
+    {
+      "name": "sholu-dashboard",
+      "url": "https://github.com/Alfais1/sholu-dashboard",
+      "isPrivate": true,
+      "description": "Self-hosted personal dashboard: music, books, films, skills and code in one place",
+      "pushedAt": "2026-08-25T12:47:58Z",
+      "language": "Python",
+      "color": "#3572A5"
+    },
+    {
+      "name": "sholu",
+      "url": "https://github.com/Alfais1/sholu",
+      "isPrivate": true,
+      "description": "Personal dashboard: music, books, films, skills and code in one place",
+      "pushedAt": "2026-08-25T12:47:55Z",
+      "language": "Python",
+      "color": "#3572A5"
+    },
+    {
+      "name": "coterie",
+      "url": "https://github.com/Alfais1/coterie",
+      "isPrivate": true,
+      "description": "Invite-and-application dating for Almaty and Astana",
+      "pushedAt": "2026-08-25T12:47:39Z",
+      "language": "TypeScript",
+      "color": "#3178c6"
+    },
+    {
+      "name": "cfa-faculty",
+      "url": "https://github.com/Alfais1/cfa-faculty",
+      "isPrivate": true,
+      "description": "CFA Level II Faculty — 11 Telegram tutor bots + control deck (deck.alfais.uk)",
+      "pushedAt": "2026-08-25T12:45:34Z",
+      "language": "Python",
+      "color": "#3572A5"
+    },
+    {
+      "name": "cleaning",
+      "url": "https://github.com/Alfais1/cleaning",
+      "isPrivate": true,
+      "description": "",
+      "pushedAt": "2026-08-25T12:43:12Z",
+      "language": "HTML",
+      "color": "#e34c26"
+    },
+    {
+      "name": "Hermes-YBR",
+      "url": "https://github.com/Alfais1/Hermes-YBR",
+      "isPrivate": true,
+      "description": "",
+      "pushedAt": "2026-08-25T12:31:01Z",
+      "language": "Python",
+      "color": "#3572A5"
+    },
+    {
+      "name": "relation",
+      "url": "https://github.com/Alfais1/relation",
+      "isPrivate": true,
+      "description": "Personal relationship manager, connection finder and social-graph analyser. Vercel + Postgres, gated by Cloudflare Access.",
+      "pushedAt": "2026-08-24T07:22:24Z",
+      "language": "TypeScript",
+      "color": "#3178c6"
+    },
+    {
+      "name": "kuluar",
+      "url": "https://github.com/Alfais1/kuluar",
+      "isPrivate": true,
+      "description": "",
+      "pushedAt": "2026-08-24T05:13:43Z",
+      "language": "TypeScript",
+      "color": "#3178c6"
+    },
+    {
+      "name": "TGTGkz",
+      "url": "https://github.com/Alfais1/TGTGkz",
+      "isPrivate": true,
+      "description": "",
+      "pushedAt": "2026-08-05T07:35:14Z",
+      "language": "TypeScript",
+      "color": "#3178c6"
+    },
+    {
+      "name": "hermes-trading-floor",
+      "url": "https://github.com/Alfais1/hermes-trading-floor",
+      "isPrivate": true,
+      "description": "Multi-agent Telegram trading floor briefing system",
+      "pushedAt": "2026-06-18T12:53:30Z",
+      "language": "Python",
+      "color": "#3572A5"
+    },
+    {
+      "name": "Abu-Trading-Floor",
+      "url": "https://github.com/Alfais1/Abu-Trading-Floor",
+      "isPrivate": true,
+      "description": "",
+      "pushedAt": "2026-06-15T07:23:25Z",
+      "language": "",
+      "color": "#8A8A9C"
+    },
+    {
+      "name": "Nurali-birthday",
+      "url": "https://github.com/Alfais1/Nurali-birthday",
+      "isPrivate": true,
+      "description": "",
+      "pushedAt": "2026-05-27T17:46:46Z",
+      "language": "HTML",
+      "color": "#e34c26"
+    },
+    {
+      "name": "AstanaEvent",
+      "url": "https://github.com/Alfais1/AstanaEvent",
+      "isPrivate": true,
+      "description": "",
+      "pushedAt": "2025-07-09T20:02:38Z",
+      "language": "JavaScript",
+      "color": "#f1e05a"
+    },
+    {
+      "name": "LawyerHub",
+      "url": "https://github.com/Alfais1/LawyerHub",
+      "isPrivate": true,
+      "description": "",
+      "pushedAt": "2025-07-09T19:01:18Z",
+      "language": "JavaScript",
+      "color": "#f1e05a"
+    }
+  ],
   "weeks": [
     [
       {
@@ -1970,8 +2143,8 @@
       },
       {
         "date": "2026-09-03",
-        "count": 2,
-        "level": 1
+        "count": 3,
+        "level": 2
       }
     ]
   ],
@@ -1979,68 +2152,68 @@
     {
       "name": "TypeScript",
       "color": "#3178c6",
-      "size": 5906601,
-      "pct": 34.01712155281977
+      "size": 5907431,
+      "pct": 33.93884307035704
     },
     {
       "name": "Python",
       "color": "#3572A5",
       "size": 5692375,
-      "pct": 32.7833575180095
+      "pct": 32.70332261563844
     },
     {
       "name": "TeX",
       "color": "#3D6117",
       "size": 2607276,
-      "pct": 15.01574672366556
+      "pct": 14.979088372781368
     },
     {
       "name": "BibTeX Style",
       "color": "#8A8A9C",
       "size": 938916,
-      "pct": 5.407377220822488
+      "pct": 5.394176043740053
     },
     {
       "name": "HTML",
       "color": "#e34c26",
-      "size": 819678,
-      "pct": 4.720665262504138
+      "size": 826160,
+      "pct": 4.746380379391002
     },
     {
       "name": "JavaScript",
       "color": "#f1e05a",
-      "size": 506898,
-      "pct": 2.9193119496104845
+      "size": 538900,
+      "pct": 3.096039975856748
     },
     {
       "name": "CSS",
       "color": "#663399",
       "size": 448091,
-      "pct": 2.5806324168036006
+      "pct": 2.5743322486947973
     },
     {
       "name": "Shell",
       "color": "#89e051",
-      "size": 229271,
-      "pct": 1.320410753246502
+      "size": 232451,
+      "pct": 1.3354566495228744
     },
     {
       "name": "PLpgSQL",
       "color": "#336790",
       "size": 197660,
-      "pct": 1.1383576182190664
+      "pct": 1.135578514803943
     },
     {
       "name": "Batchfile",
       "color": "#C1F12E",
       "size": 10522,
-      "pct": 0.060597990786709584
+      "pct": 0.06045005126361979
     },
     {
       "name": "Makefile",
       "color": "#427819",
       "size": 6324,
-      "pct": 0.03642099351217938
+      "pct": 0.036332077950117045
     }
   ]
 }

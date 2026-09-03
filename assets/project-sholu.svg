@@ -2,22 +2,21 @@
 <defs><pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#ffffff" opacity="0.028"/></pattern></defs>
 
 <rect x="0.5" y="0.5" width="439" height="175" rx="8" fill="#0E0E14" stroke="#22222E"/>
-<text x="20" y="30" font-size="11" fill="#4A4A5C" font-weight="700" text-anchor="start" letter-spacing="1.5" >06</text>
+<text x="20" y="30" font-size="11" fill="#4A4A5C" font-weight="700" text-anchor="start" letter-spacing="1.5" textLength="15.1" lengthAdjust="spacing" >06</text>
 <line x1="44" y1="26" x2="350" y2="26" stroke="#22222E"/>
 
 <g transform="translate(420 30)">
-  <text x="-14" y="0" font-size="9" fill="#FF2A6D" font-weight="500" text-anchor="end" letter-spacing="1.5" >PRIVATE</text>
-  <circle cx="-4" cy="-3.5" r="3.5" fill="#FF2A6D"></circle>
+  <text x="-14" y="0" font-size="9" fill="#FF2A6D" font-weight="500" text-anchor="end" letter-spacing="1.5" textLength="48.1" lengthAdjust="spacing" >PRIVATE</text>
+  <circle cx="-4" cy="-3.5" r="3.5" fill="#FF2A6D"/>
 </g>
-<text x="20" y="58" font-size="19" fill="#F5E900" font-weight="800" text-anchor="start" letter-spacing="1" >SHOLU</text>
-<text x="20" y="80" font-size="12" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="0" >Self-hosted personal dashboard: music, books, films,</text><text x="20" y="97" font-size="12" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="0" >skills and code in one place.</text>
+<text x="20" y="58" font-size="19" fill="#F5E900" font-weight="800" text-anchor="start" letter-spacing="1" textLength="62.9" lengthAdjust="spacing" >SHOLU</text>
+<text x="20" y="80" font-size="12" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="0" textLength="386.9" lengthAdjust="spacing" >Self-hosted personal dashboard: music, books, films,</text><text x="20" y="97" font-size="12" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="0" textLength="215.8" lengthAdjust="spacing" >skills and code in one place.</text>
 <g><rect x="20" y="128" width="53.2" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
-<text x="46.6" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" >PYTHON</text></g><g><rect x="79.2" y="128" width="71.8" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
-<text x="115.1" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" >DASHBOARD</text></g><g><rect x="157" y="128" width="84.2" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
-<text x="199.1" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" >SELF-HOSTED</text></g>
-<text x="420" y="162" font-size="9" fill="#4A4A5C" font-weight="500" text-anchor="end" letter-spacing="0.5" >github.com/Alfais1/sholu-dashboard</text>
-<text x="20" y="162" font-size="9" fill="#00F0FF" font-weight="500" text-anchor="start" letter-spacing="1.5" >OPEN ↗</text>
-<rect x="0" y="0" width="0" height="2" fill="#00F0FF" opacity="0.8"><animate attributeName="width" values="0;440;440" dur="6s" begin="3.0s" repeatCount="indefinite" keyTimes="0;0.25;1"/><animate attributeName="opacity" values="0.8;0.8;0" dur="6s" begin="3.0s" repeatCount="indefinite" keyTimes="0;0.25;1"/></rect>
+<text x="46.6" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="41.2" lengthAdjust="spacing" >PYTHON</text></g><g><rect x="79.2" y="128" width="71.8" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
+<text x="115.1" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="62.2" lengthAdjust="spacing" >DASHBOARD</text></g><g><rect x="157" y="128" width="84.2" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
+<text x="199.1" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="76.2" lengthAdjust="spacing" >SELF-HOSTED</text></g>
+<text x="420" y="162" font-size="9" fill="#4A4A5C" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="206.2" lengthAdjust="spacing" >github.com/Alfais1/sholu-dashboard</text>
+<text x="20" y="162" font-size="9" fill="#00F0FF" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="41.0" lengthAdjust="spacing" >OPEN ↗</text>
 <g stroke="#F5E900" stroke-width="1.5" fill="none" opacity="0.9">
 <path d="M6 16V6h10"/><path d="M424 6h10v10"/>
 <path d="M6 160v10h10"/><path d="M424 170h10v-10"/></g>

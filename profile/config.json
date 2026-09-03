@@ -5,14 +5,42 @@
   "location": "ASTANA // KZ",
   "coords": "51.1694 N · 71.4491 E",
   "about": [
-    "I build tools that turn messy real-world data into something you can actually reason about:",
-    "trading desks, government personnel graphs, archive search, tutor bots, personal dashboards."
+    "I build stuff that I think will make life easier:",
+    "trading desks · government personnel graphs · archive search · autonomous bots · personal hobby projects"
   ],
   "links": {
     "portfolio": "https://alfais.uk",
     "email": "mailto:alfais2004@gmail.com",
     "telegram": "https://t.me/alfais"
   },
-  "stack": "ts,js,react,nextjs,nodejs,python,fastapi,postgres,supabase,cloudflare,vercel,tailwind,docker,git,bash",
+  "stack": {
+    "LANGUAGES": [
+      "TypeScript",
+      "Python",
+      "JavaScript",
+      "SQL",
+      "Bash"
+    ],
+    "FRAMEWORKS": [
+      "Next.js",
+      "React",
+      "FastAPI",
+      "Node.js",
+      "Tailwind"
+    ],
+    "DATA": [
+      "Postgres",
+      "Supabase",
+      "Vectorize",
+      "pandas"
+    ],
+    "INFRA": [
+      "Cloudflare",
+      "Vercel",
+      "Docker",
+      "GitHub Actions",
+      "Telegram Bot API"
+    ]
+  },
   "bannerDarken": 0.7
 }

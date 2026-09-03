@@ -3,6 +3,5 @@
 
 <rect width="1000" height="16" fill="#08080C"/>
 <line x1="0" y1="8" x2="1000" y2="8" stroke="#22222E"/>
-<rect x="0" y="7" width="120" height="2" fill="#F5E900"><animate attributeName="x" from="-120" to="1000" dur="5s" repeatCount="indefinite"/></rect>
-<rect x="0" y="7" width="40" height="2" fill="#00F0FF"><animate attributeName="x" from="-40" to="1000" dur="5s" begin="1.2s" repeatCount="indefinite"/></rect>
+<rect x="0" y="7" width="56" height="2" fill="#F5E900"/>
 </svg>
