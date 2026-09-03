@@ -1,0 +1,18 @@
+{
+  "login": "Alfais1",
+  "name": "ALFAIS",
+  "tagline": "quant research · archives · bots · dashboards",
+  "location": "ASTANA // KZ",
+  "coords": "51.1694 N · 71.4491 E",
+  "about": [
+    "I build tools that turn messy real-world data into something you can actually reason about:",
+    "trading desks, government personnel graphs, archive search, tutor bots, personal dashboards."
+  ],
+  "links": {
+    "portfolio": "https://alfais.uk",
+    "email": "mailto:alfais2004@gmail.com",
+    "telegram": "https://t.me/alfais"
+  },
+  "stack": "ts,js,react,nextjs,nodejs,python,fastapi,postgres,supabase,cloudflare,vercel,tailwind,docker,git,bash",
+  "bannerDarken": 0.7
+}

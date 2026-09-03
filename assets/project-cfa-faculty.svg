@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="176" viewBox="0 0 440 176" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace" role="img">
+<defs><pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#ffffff" opacity="0.028"/></pattern></defs>
+
+<rect x="0.5" y="0.5" width="439" height="175" rx="8" fill="#0E0E14" stroke="#22222E"/>
+<text x="20" y="30" font-size="11" fill="#4A4A5C" font-weight="700" text-anchor="start" letter-spacing="1.5" >04</text>
+<line x1="44" y1="26" x2="350" y2="26" stroke="#22222E"/>
+
+<g transform="translate(420 30)">
+  <text x="-14" y="0" font-size="9" fill="#3DFF8C" font-weight="500" text-anchor="end" letter-spacing="1.5" >LIVE</text>
+  <circle cx="-4" cy="-3.5" r="3.5" fill="#3DFF8C"><animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite"/></circle>
+</g>
+<text x="20" y="58" font-size="19" fill="#F5E900" font-weight="800" text-anchor="start" letter-spacing="1" >CFA FACULTY</text>
+<text x="20" y="80" font-size="12" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="0" >Eleven Telegram tutor bots for CFA Level II plus a</text><text x="20" y="97" font-size="12" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="0" >control deck to run them.</text>
+<g><rect x="20" y="128" width="53.2" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
+<text x="46.6" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" >PYTHON</text></g><g><rect x="79.2" y="128" width="65.6" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
+<text x="112" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" >TELEGRAM</text></g><g><rect x="150.8" y="128" width="34.6" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
+<text x="168.10000000000002" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" >LLM</text></g>
+<text x="420" y="162" font-size="9" fill="#4A4A5C" font-weight="500" text-anchor="end" letter-spacing="0.5" >deck.alfais.uk</text>
+<text x="20" y="162" font-size="9" fill="#00F0FF" font-weight="500" text-anchor="start" letter-spacing="1.5" >OPEN ↗</text>
+<rect x="0" y="0" width="0" height="2" fill="#00F0FF" opacity="0.8"><animate attributeName="width" values="0;440;440" dur="6s" begin="1.8s" repeatCount="indefinite" keyTimes="0;0.25;1"/><animate attributeName="opacity" values="0.8;0.8;0" dur="6s" begin="1.8s" repeatCount="indefinite" keyTimes="0;0.25;1"/></rect>
+<g stroke="#F5E900" stroke-width="1.5" fill="none" opacity="0.9">
+<path d="M6 16V6h10"/><path d="M424 6h10v10"/>
+<path d="M6 160v10h10"/><path d="M424 170h10v-10"/></g>
+<rect width="440" height="176" fill="url(#scan)" pointer-events="none"/>
+</svg>

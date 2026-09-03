@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="44" viewBox="0 0 1000 44" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace" role="img">
+<defs></defs>
+
+<rect width="1000" height="44" fill="#08080C"/>
+<text x="0" y="30" font-size="12" fill="#4A4A5C" font-weight="700" text-anchor="start" letter-spacing="1.5" >04</text>
+<text x="30" y="30" font-size="18" fill="#F5E900" font-weight="800" text-anchor="start" letter-spacing="4" >// CONTACT</text>
+<line x1="162" y1="26" x2="1000" y2="26" stroke="#22222E"/>
+<rect x="162" y="25" width="60" height="2" fill="#00F0FF"><animate attributeName="width" values="0;0;60" keyTimes="0;0.200;1" dur="1.00s" begin="0s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;0.2 0.8 0.2 1"/></rect>
+</svg>

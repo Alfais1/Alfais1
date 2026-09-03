@@ -1,0 +1,78 @@
+<!doctype html><meta charset="utf-8"><title>three render</title>
+<style>body{margin:0;background:#08080C}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<canvas id="c" width="1600" height="667"></canvas>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+const W = 1600, H = 667, BG = 0x08080c, CYAN = 0x00f0ff, YEL = 0xf5e900, MAG = 0xff2a6d;
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H, false);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(BG); scene.fog = new THREE.Fog(BG, 7, 18);
+const camera = new THREE.PerspectiveCamera(32, W / H, 0.1, 100);
+camera.position.set(-0.6, 0.55, 8.2); camera.lookAt(1.5, 0.05, 0);
+
+// seeded rng so re-renders are identical
+let seed = 2077; const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+const onSphere = (r) => { const u = rnd() * 2 - 1, t = rnd() * Math.PI * 2, s = Math.sqrt(1 - u * u); return new THREE.Vector3(s * Math.cos(t) * r, u * r, s * Math.sin(t) * r); };
+
+const globe = new THREE.Group(); globe.position.set(3.0, 0.1, 0); scene.add(globe);
+const R = 1.55;
+// occluder so back-side lines vanish
+globe.add(new THREE.Mesh(new THREE.SphereGeometry(R * 0.985, 48, 32), new THREE.MeshBasicMaterial({ color: BG })));
+// lat/long cage + icosahedral mesh
+globe.add(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.SphereGeometry(R, 30, 18)), new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.16 })));
+globe.add(new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.IcosahedronGeometry(R * 1.004, 2)), new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.42 })));
+// surface nodes
+const nodes = []; for (let i = 0; i < 90; i++) nodes.push(onSphere(R * 1.01));
+const npos = new Float32Array(nodes.length * 3); nodes.forEach((p, i) => p.toArray(npos, i * 3));
+const ng = new THREE.BufferGeometry(); ng.setAttribute('position', new THREE.BufferAttribute(npos, 3));
+globe.add(new THREE.Points(ng, new THREE.PointsMaterial({ color: YEL, size: 0.045, sizeAttenuation: true })));
+// data arcs between nodes (only front-facing ones so they read)
+for (let i = 0; i < 18; i++) {
+  const a = nodes[Math.floor(rnd() * nodes.length)], b = nodes[Math.floor(rnd() * nodes.length)];
+  if (a.distanceTo(b) < 0.7 || a.distanceTo(b) > 2.2 || a.z < 0.35 || b.z < 0.35) { i--; continue; }
+  const mid = a.clone().add(b).multiplyScalar(0.5).normalize().multiplyScalar(R + 0.25 + a.distanceTo(b) * 0.28);
+  const pts = new THREE.QuadraticBezierCurve3(a, mid, b).getPoints(48);
+  globe.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: i % 4 === 0 ? MAG : YEL, transparent: true, opacity: i % 4 === 0 ? 0.55 : 0.8 })));
+}
+// orbit rings
+const ring = (r, col, tiltX, tiltZ, op, w = 0.008) => { const m = new THREE.Mesh(new THREE.TorusGeometry(r, w, 6, 320), new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: op })); m.rotation.set(tiltX, 0, tiltZ); globe.add(m); };
+ring(R + 0.55, YEL, Math.PI / 2 - 1.05, 0.5, 0.9);
+ring(R + 0.95, CYAN, Math.PI / 2 - 0.75, -0.7, 0.35, 0.006);
+ring(R + 1.35, CYAN, Math.PI / 2 + 0.15, 1.1, 0.18, 0.005);
+// orbiting satellites on ring 1
+for (let i = 0; i < 3; i++) { const t = rnd() * Math.PI * 2, r = R + 0.55; const p = new THREE.Vector3(Math.cos(t) * r, 0, Math.sin(t) * r).applyEuler(new THREE.Euler(Math.PI / 2 - 1.05, 0, 0.5)); const s = new THREE.Mesh(new THREE.SphereGeometry(0.035, 12, 12), new THREE.MeshBasicMaterial({ color: YEL })); s.position.copy(p); globe.add(s); }
+// atmosphere halo: additive sprite-like ring
+const halo = new THREE.Mesh(new THREE.RingGeometry(R * 1.02, R * 1.45, 96), new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, uniforms: { c: { value: new THREE.Color(CYAN) }, r0: { value: R * 1.02 }, r1: { value: R * 1.45 } },
+  vertexShader: `varying vec3 p; void main(){ p = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }`,
+  fragmentShader: `uniform vec3 c; uniform float r0, r1; varying vec3 p; void main(){ float d = (length(p.xy) - r0) / (r1 - r0); float a = pow(1.0 - d, 3.2) * 0.22; gl_FragColor = vec4(c, a); }` }));
+halo.position.copy(globe.position); scene.add(halo);
+
+// receding grid floor
+const grid = new THREE.GridHelper(40, 48, CYAN, CYAN); grid.material.transparent = true; grid.material.opacity = 0.14; grid.position.set(0, -2.1, -4); scene.add(grid);
+// floating particles / dust
+const dust = new Float32Array(900 * 3); for (let i = 0; i < 900; i++) { dust[i * 3] = rnd() * 22 - 9; dust[i * 3 + 1] = rnd() * 9 - 3.5; dust[i * 3 + 2] = rnd() * 14 - 12; }
+const dg = new THREE.BufferGeometry(); dg.setAttribute('position', new THREE.BufferAttribute(dust, 3));
+scene.add(new THREE.Points(dg, new THREE.PointsMaterial({ color: 0xffffff, size: 0.02, transparent: true, opacity: 0.55 })));
+const dust2 = new Float32Array(120 * 3); for (let i = 0; i < 120; i++) { dust2[i * 3] = rnd() * 22 - 9; dust2[i * 3 + 1] = rnd() * 9 - 3.5; dust2[i * 3 + 2] = rnd() * 14 - 12; }
+const dg2 = new THREE.BufferGeometry(); dg2.setAttribute('position', new THREE.BufferAttribute(dust2, 3));
+scene.add(new THREE.Points(dg2, new THREE.PointsMaterial({ color: CYAN, size: 0.035, transparent: true, opacity: 0.8 })));
+
+// tilt the globe like a real axis
+globe.rotation.z = -0.35; globe.rotation.y = 0.6;
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+composer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.5, 0.5, 0.25));
+composer.addPass(new OutputPass());
+composer.render();
+const url = canvas.toDataURL('image/jpeg', 0.93);
+window.__done = url.length;
+fetch('http://localhost:4174/', { method: 'POST', body: url }).then(r => r.text()).then(t => { window.__saved = t; }).catch(e => { window.__saved = 'err ' + e; });
+</script>
