@@ -57,9 +57,9 @@
 <g transform="translate(72 466)">
   <circle cx="0" cy="-4" r="4" fill="#3DFF8C"><animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite"/></circle>
   <text x="12" y="0" font-size="11" fill="#3DFF8C" font-weight="500" text-anchor="start" letter-spacing="1.5" >ONLINE</text>
-  <text x="84" y="0" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" >CONTRIBUTIONS 130</text>
-  <text x="248" y="0" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" >REPOS 18</text>
-  <text x="338.2" y="0" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" >STREAK 1D</text>
+  <text x="84" y="0" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" >CONTRIBUTIONS 132</text>
+  <text x="248" y="0" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" >REPOS 1</text>
+  <text x="330" y="0" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" >STREAK 2D</text>
 </g>
 <rect x="952" y="452" width="186" height="22" rx="4" fill="#08080C" fill-opacity="0.72"/>
 <text x="1128" y="466" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="end" letter-spacing="1.5" >LAST SYNC 2026.09.03</text>
