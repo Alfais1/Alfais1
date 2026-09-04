@@ -295,19 +295,19 @@
   "name": null,
   "url": "https://github.com/Alfais1",
   "since": "2024",
-  "fetchedAt": "2026-09-04T12:59:59.220Z",
+  "fetchedAt": "2026-09-04T13:02:20.368Z",
   "all": {
-    "commits": 114,
+    "commits": 115,
     "prs": 2,
     "issues": 0,
     "reviews": 0,
-    "private": 131,
+    "private": 0,
     "contributions": 136
   },
   "lastYear": {
     "contributions": 107,
-    "commits": 3,
-    "private": 103
+    "commits": 86,
+    "private": 0
   },
   "repos": {
     "total": 21,
@@ -315,6 +315,15 @@
     "stars": 4
   },
   "repoList": [
+    {
+      "name": "Alfais1",
+      "url": "https://github.com/Alfais1/Alfais1",
+      "isPrivate": false,
+      "description": "",
+      "pushedAt": "2026-09-04T13:01:52Z",
+      "language": "JavaScript",
+      "color": "#f1e05a"
+    },
     {
       "name": "parlor",
       "url": "https://github.com/Alfais1/parlor",
@@ -332,15 +341,6 @@
       "pushedAt": "2026-09-04T12:36:59Z",
       "language": "TypeScript",
       "color": "#3178c6"
-    },
-    {
-      "name": "Alfais1",
-      "url": "https://github.com/Alfais1/Alfais1",
-      "isPrivate": false,
-      "description": "",
-      "pushedAt": "2026-09-04T07:57:20Z",
-      "language": "JavaScript",
-      "color": "#f1e05a"
     },
     {
       "name": "wonk-demo",
