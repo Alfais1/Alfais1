@@ -10,7 +10,7 @@
 <text x="20" y="132" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="52.4" lengthAdjust="spacing" >COMMITS</text>
 <rect x="150" y="125" width="110" height="3" fill="#22222E"/>
 <rect x="150" y="125" width="110.0" height="3" fill="#F5E900"></rect>
-<text x="300" y="132" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="21.5" lengthAdjust="spacing" >115</text><text x="20" y="148" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="98.6" lengthAdjust="spacing" >PULL REQUESTS</text>
+<text x="300" y="132" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="21.5" lengthAdjust="spacing" >116</text><text x="20" y="148" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="98.6" lengthAdjust="spacing" >PULL REQUESTS</text>
 <rect x="150" y="141" width="110" height="3" fill="#22222E"/>
 <rect x="150" y="141" width="2.0" height="3" fill="#00F0FF"></rect>
 <text x="300" y="148" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="6.8" lengthAdjust="spacing" >2</text><text x="20" y="164" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="44.7" lengthAdjust="spacing" >ISSUES</text>
@@ -18,10 +18,10 @@
 <rect x="150" y="157" width="2.0" height="3" fill="#F5E900"></rect>
 <text x="300" y="164" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="6.8" lengthAdjust="spacing" >0</text><text x="20" y="180" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="90.9" lengthAdjust="spacing" >REPOSITORIES</text>
 <rect x="150" y="173" width="110" height="3" fill="#22222E"/>
-<rect x="150" y="173" width="20.1" height="3" fill="#00F0FF"></rect>
+<rect x="150" y="173" width="19.9" height="3" fill="#00F0FF"></rect>
 <text x="300" y="180" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="14.1" lengthAdjust="spacing" >21</text><text x="20" y="196" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="98.6" lengthAdjust="spacing" >PRIVATE REPOS</text>
 <rect x="150" y="189" width="110" height="3" fill="#22222E"/>
-<rect x="150" y="189" width="19.1" height="3" fill="#F5E900"></rect>
+<rect x="150" y="189" width="19.0" height="3" fill="#F5E900"></rect>
 <text x="300" y="196" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="14.1" lengthAdjust="spacing" >20</text><text x="20" y="212" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="37.0" lengthAdjust="spacing" >STARS</text>
 <rect x="150" y="205" width="110" height="3" fill="#22222E"/>
 <rect x="150" y="205" width="3.8" height="3" fill="#00F0FF"></rect>
