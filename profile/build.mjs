@@ -38,7 +38,7 @@ async function fetchData(login) {
     `query($login:String!){ user(login:$login){ id name login url createdAt
       contributionsCollection{ contributionYears }
       repositories(first:100, ownerAffiliations:OWNER, orderBy:{field:PUSHED_AT,direction:DESC}){
-        totalCount nodes{ name isPrivate isFork stargazerCount description url pushedAt primaryLanguage{ name color }
+        totalCount nodes{ name isPrivate isFork stargazerCount description url pushedAt primaryLanguage{ name color } defaultBranchRef{ name }
           languages(first:10, orderBy:{field:SIZE,direction:DESC}){ edges{ size node{ name color } } } } } } }`,
     { login },
   );
@@ -98,7 +98,10 @@ async function fetchData(login) {
     .sort((a, b) => b.size - a.size)
     .map((l) => ({ ...l, pct: (100 * l.size) / langTotal }));
 
+  const stackGroups = await scanStack(login, u.repositories.nodes.filter((r) => !r.isFork));
+
   return {
+    stack: stackGroups,
     login: u.login,
     name: u.name,
     url: u.url,
@@ -118,6 +121,99 @@ async function fetchData(login) {
     weeks,
     languages,
   };
+}
+
+// ── stack, derived from what the repos actually declare ──────────────────────
+// Raw package name → the name a human recognises. Anything unmapped is ignored,
+// so the card never fills up with transitive noise like "six" or "hyperframe".
+const ALIAS = {
+  react: "React", next: "Next.js", vite: "Vite", "react-router": "React Router", "react-router-dom": "React Router",
+  tailwindcss: "Tailwind", "@tailwindcss/vite": "Tailwind", zustand: "Zustand", zod: "Zod",
+  "@tanstack/react-query": "TanStack Query", "lucide-react": "Lucide", i18next: "i18next", "react-i18next": "i18next",
+  recharts: "Recharts", cmdk: "shadcn/ui", sonner: "shadcn/ui", "class-variance-authority": "shadcn/ui",
+  katex: "KaTeX", "@radix-ui/react-dialog": "Radix UI", "@radix-ui/react-tabs": "Radix UI",
+  "@radix-ui/react-accordion": "Radix UI", "@radix-ui/react-slot": "Radix UI", "@radix-ui/react-label": "Radix UI",
+  "@radix-ui/react-alert-dialog": "Radix UI",
+
+  gsap: "GSAP", "@gsap/react": "GSAP", lenis: "Lenis", three: "Three.js", "@react-three/fiber": "React Three Fiber",
+  "@react-three/drei": "drei", "@react-three/postprocessing": "drei", "framer-motion": "Framer Motion",
+  motion: "Framer Motion", "pixi.js": "PixiJS", "@rive-app/canvas-lite": "Rive",
+  "@dimforge/rapier3d-compat": "Rapier", tweakpane: "Tweakpane", "three-mesh-bvh": "Three.js",
+
+  fastapi: "FastAPI", uvicorn: "Uvicorn", starlette: "Starlette", hono: "Hono", "@hono/node-server": "Hono",
+  bottle: "Bottle", httpx: "httpx", requests: "Requests", pyjwt: "PyJWT", jose: "jose",
+  "python-multipart": "FastAPI", jinja2: "Jinja2", websockets: "WebSockets", "web-push": "Web Push",
+
+  openai: "OpenAI API", anthropic: "Anthropic API", mcp: "MCP", torch: "PyTorch", torchaudio: "PyTorch",
+  einops: "PyTorch", openunmix: "PyTorch",
+
+  "@supabase/supabase-js": "Supabase", supabase: "Supabase", postgrest: "Supabase", "@supabase/ssr": "Supabase",
+  gotrue: "Supabase", storage3: "Supabase", pg: "Postgres", postgres: "Postgres", "@electric-sql/pglite": "PGlite",
+  numpy: "NumPy", networkx: "NetworkX", "d3-force": "D3", "d3-hierarchy": "D3", yfinance: "yfinance",
+  gspread: "Google Sheets API", lxml: "lxml", "python-docx": "python-docx", moviepy: "MoviePy", pillow: "Pillow",
+
+  expo: "Expo", "expo-router": "Expo", "react-native": "React Native", "react-native-reanimated": "Reanimated",
+  "@capacitor/core": "Capacitor", "@capacitor/ios": "Capacitor", nativewind: "NativeWind",
+  "@sentry/react-native": "Sentry", pyqt5: "PyQt", pywebview: "pywebview",
+
+  wrangler: "Cloudflare Workers", "@cloudflare/workers-types": "Cloudflare Workers",
+  "@cloudflare/vite-plugin": "Cloudflare Workers", vitest: "Vitest", "@vitest/coverage-v8": "Vitest",
+  playwright: "Playwright", "puppeteer-core": "Puppeteer", turbo: "Turborepo", eslint: "ESLint",
+  typescript: "TypeScript", tsx: "tsx", oxlint: "oxlint", pytest: "pytest", "pytest-mock": "pytest",
+  qrcode: "QR codes", spotipy: "Spotify API",
+};
+const GROUPS = {
+  FRONTEND: ["React", "Next.js", "Vite", "Tailwind", "shadcn/ui", "Radix UI", "TanStack Query", "Zustand", "Zod", "React Router", "Recharts", "Lucide", "KaTeX", "i18next"],
+  "MOTION & 3D": ["GSAP", "Lenis", "Three.js", "React Three Fiber", "drei", "Framer Motion", "PixiJS", "Rive", "Rapier", "Tweakpane"],
+  "BACKEND & AI": ["FastAPI", "Uvicorn", "Starlette", "Hono", "httpx", "Requests", "PyJWT", "WebSockets", "OpenAI API", "Anthropic API", "MCP", "PyTorch"],
+  DATA: ["Postgres", "Supabase", "PGlite", "NumPy", "NetworkX", "D3", "yfinance", "Google Sheets API", "lxml", "Pillow", "MoviePy"],
+  MOBILE: ["Expo", "React Native", "Reanimated", "Capacitor", "NativeWind", "PyQt", "pywebview", "Sentry"],
+  "INFRA & TOOLING": ["Cloudflare Workers", "Vercel", "GitHub Actions", "Docker", "Turborepo", "Vitest", "pytest", "Playwright", "Puppeteer", "TypeScript", "ESLint"],
+};
+
+async function scanStack(login, repos) {
+  const hit = new Map(); // display name → Set(repo)
+  const add = (name, repo) => { if (!name) return; if (!hit.has(name)) hit.set(name, new Set()); hit.get(name).add(repo); };
+  const api = (u) => fetch(u, { headers: { authorization: `bearer ${token}`, "user-agent": "profile-build" } }).then((r) => r.json()).catch(() => null);
+
+  for (const r of repos) {
+    const branch = r.defaultBranchRef?.name;
+    if (!branch) continue;
+    const tree = await api(`https://api.github.com/repos/${login}/${r.name}/git/trees/${branch}?recursive=1`);
+    if (!tree?.tree) continue;
+    const paths = tree.tree.filter((t) => t.type === "blob").map((t) => t.path);
+    // infrastructure is proven by files, not packages
+    for (const p of paths) {
+      if (p.startsWith(".github/workflows/")) add("GitHub Actions", r.name);
+      const b = p.split("/").pop();
+      if (b === "vercel.json") add("Vercel", r.name);
+      if (/^wrangler\.(toml|jsonc?)$/.test(b)) add("Cloudflare Workers", r.name);
+      if (b === "Dockerfile" || /^docker-compose\.ya?ml$/.test(b)) add("Docker", r.name);
+    }
+    const manifests = paths.filter((p) => p.split("/").length <= 3 && /(^|\/)(package\.json|requirements[^/]*\.txt|pyproject\.toml)$/i.test(p));
+    for (const p of manifests.slice(0, 4)) {
+      const f = await api(`https://api.github.com/repos/${login}/${r.name}/contents/${encodeURIComponent(p)}?ref=${branch}`);
+      if (!f?.content) continue;
+      const txt = Buffer.from(f.content, "base64").toString("utf8");
+      if (p.endsWith("package.json")) {
+        try { const j = JSON.parse(txt); for (const k of Object.keys({ ...j.dependencies, ...j.devDependencies })) add(ALIAS[k], r.name); } catch {}
+      } else if (p.endsWith("pyproject.toml")) {
+        for (const m of txt.matchAll(/^\s*["']?([A-Za-z0-9_.\-]+)["']?\s*[=><~^]/gm)) add(ALIAS[m[1].toLowerCase()], r.name);
+      } else {
+        for (const line of txt.split("\n")) {
+          if (line.trim().startsWith("#")) continue;
+          const m = line.match(/^\s*([A-Za-z0-9_.\-]+)/);
+          if (m) add(ALIAS[m[1].toLowerCase()], r.name);
+        }
+      }
+    }
+  }
+  return Object.entries(GROUPS)
+    .map(([group, names]) => ({
+      group,
+      items: names.filter((n) => hit.has(n)).map((n) => ({ name: n, repos: hit.get(n).size })).sort((a, b) => b.repos - a.repos || a.name.localeCompare(b.name)),
+    }))
+    .filter((g) => g.items.length);
 }
 
 function streaks(weeks) {
@@ -547,22 +643,25 @@ ${scanOverlay(W, H)}`;
 }
 
 function stack() {
-  const W = 1000, groups = Object.entries(cfg.stack);
-  const rowH = 34, left = 150;
-  let y = 52, body = "";
-  for (const [g, items] of groups) {
+  const W = 1000, left = 168, rowH = 30, groups = data.stack || [];
+  let y = 54, body = "";
+  for (const g of groups) {
+    const startY = y;
     let x = left, rowY = y;
-    body += label(20, rowY + 16, g, { size: 10, fill: T.muted });
-    for (const it of items) {
-      const c = chip(x, rowY, it.toUpperCase(), T.cyan, 10);
-      if (x + c.w > W - 20) { rowY += rowH; x = left; }
-      const c2 = chip(x, rowY, it.toUpperCase(), T.cyan, 10);
-      body += c2.svg; x += c2.w + 8;
+    for (const it of g.items) {
+      // the count is what makes this honest: how many repos actually pull it in
+      const txt = `${it.name.toUpperCase()} ${it.repos}`;
+      const c = chip(x, rowY, txt, it.repos >= 4 ? T.yellow : T.cyan, 10);
+      if (x + c.w > W - 20) { rowY += rowH; x = left; body += chip(x, rowY, txt, it.repos >= 4 ? T.yellow : T.cyan, 10).svg; x += chip(x, rowY, txt).w + 7; continue; }
+      body += c.svg; x += c.w + 7;
     }
-    y = rowY + rowH + 4;
+    body += label(20, startY + 15, g.group, { size: 10, fill: T.muted });
+    if (groups.indexOf(g) < groups.length - 1) body += `<line x1="20" y1="${rowY + 27}" x2="${W - 20}" y2="${rowY + 27}" stroke="${T.lineSoft}"/>`;
+    y = rowY + rowH + 12;
   }
-  const H = y + 6;
-  return svg(W, H, `${frame(W, H)}${cardTitle(W, "// STACK", `${groups.reduce((n, [, i]) => n + i.length, 0)} TOOLS`)}${body}${corners(W, H, T.cyan, 10, 6)}${scanOverlay(W, H)}`, scanDef);
+  const H = y - 2;
+  const total = groups.reduce((n, g) => n + g.items.length, 0);
+  return svg(W, H, `${frame(W, H)}${cardTitle(W, "// STACK", `${total} TOOLS · COUNT = REPOSITORIES USING IT`)}${body}${corners(W, H, T.cyan, 10, 6)}${scanOverlay(W, H)}`, scanDef);
 }
 
 function vault() {

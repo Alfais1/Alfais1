@@ -5,7 +5,7 @@
 <text x="20" y="30" font-size="13" fill="#F5E900" font-weight="700" text-anchor="start" letter-spacing="2.5" textLength="82.0" lengthAdjust="spacing" >// STATS</text>
 <line x1="114.0" y1="26" x2="372.5" y2="26" stroke="#22222E"/>
 <text x="475" y="30" font-size="9" fill="#00F0FF" font-weight="500" text-anchor="end" letter-spacing="1.5" textLength="90.5" lengthAdjust="spacing" >INCL. PRIVATE</text>
-<text x="20" y="84" font-size="40" fill="#F5E900" font-weight="800" text-anchor="start" letter-spacing="-1" textLength="72.4" lengthAdjust="spacing" >134</text>
+<text x="20" y="84" font-size="40" fill="#F5E900" font-weight="800" text-anchor="start" letter-spacing="-1" textLength="72.4" lengthAdjust="spacing" >136</text>
 <text x="20" y="102" font-size="9" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="302.9" lengthAdjust="spacing" >CONTRIBUTIONS · ALL TIME · PRIVATE INCLUDED</text>
 <text x="20" y="132" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="52.4" lengthAdjust="spacing" >COMMITS</text>
 <rect x="150" y="125" width="110" height="3" fill="#22222E"/>
@@ -18,20 +18,20 @@
 <rect x="150" y="157" width="2.0" height="3" fill="#F5E900"></rect>
 <text x="300" y="164" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="6.8" lengthAdjust="spacing" >0</text><text x="20" y="180" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="90.9" lengthAdjust="spacing" >REPOSITORIES</text>
 <rect x="150" y="173" width="110" height="3" fill="#22222E"/>
-<rect x="150" y="173" width="18.3" height="3" fill="#00F0FF"></rect>
-<text x="300" y="180" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="14.1" lengthAdjust="spacing" >19</text><text x="20" y="196" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="98.6" lengthAdjust="spacing" >PRIVATE REPOS</text>
+<rect x="150" y="173" width="20.3" height="3" fill="#00F0FF"></rect>
+<text x="300" y="180" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="14.1" lengthAdjust="spacing" >21</text><text x="20" y="196" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="98.6" lengthAdjust="spacing" >PRIVATE REPOS</text>
 <rect x="150" y="189" width="110" height="3" fill="#22222E"/>
-<rect x="150" y="189" width="17.4" height="3" fill="#F5E900"></rect>
-<text x="300" y="196" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="14.1" lengthAdjust="spacing" >18</text><text x="20" y="212" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="37.0" lengthAdjust="spacing" >STARS</text>
+<rect x="150" y="189" width="19.3" height="3" fill="#F5E900"></rect>
+<text x="300" y="196" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="14.1" lengthAdjust="spacing" >20</text><text x="20" y="212" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="37.0" lengthAdjust="spacing" >STARS</text>
 <rect x="150" y="205" width="110" height="3" fill="#22222E"/>
 <rect x="150" y="205" width="3.9" height="3" fill="#00F0FF"></rect>
 <text x="300" y="212" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="6.8" lengthAdjust="spacing" >4</text>
 
 <circle cx="405" cy="128" r="46" fill="none" stroke="#22222E" stroke-width="6"/>
-<circle cx="405" cy="128" r="46" fill="none" stroke="#00F0FF" stroke-width="6" stroke-linecap="round" stroke-dasharray="289.0" stroke-dashoffset="144.5" transform="rotate(-90 405 128)">
+<circle cx="405" cy="128" r="46" fill="none" stroke="#00F0FF" stroke-width="6" stroke-linecap="round" stroke-dasharray="289.0" stroke-dashoffset="72.3" transform="rotate(-90 405 128)">
   
 </circle>
-<text x="405" y="134" font-size="28" fill="#EDEDF3" font-weight="700" text-anchor="middle" letter-spacing="0" textLength="17.4" lengthAdjust="spacing" >2</text>
+<text x="405" y="134" font-size="28" fill="#EDEDF3" font-weight="700" text-anchor="middle" letter-spacing="0" textLength="17.4" lengthAdjust="spacing" >3</text>
 <text x="405" y="150" font-size="8" fill="#8A8A9C" font-weight="500" text-anchor="middle" letter-spacing="1.5" textLength="63.1" lengthAdjust="spacing" >DAY STREAK</text>
 <text x="405" y="202" font-size="9" fill="#4A4A5C" font-weight="500" text-anchor="middle" letter-spacing="1.5" textLength="69.3" lengthAdjust="spacing" >LONGEST 4D</text>
 <g stroke="#00F0FF" stroke-width="1.5" fill="none" opacity="0.9">

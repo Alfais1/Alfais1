@@ -1,34 +1,344 @@
 {
+  "stack": [
+    {
+      "group": "FRONTEND",
+      "items": [
+        {
+          "name": "React",
+          "repos": 10
+        },
+        {
+          "name": "Vite",
+          "repos": 9
+        },
+        {
+          "name": "Tailwind",
+          "repos": 7
+        },
+        {
+          "name": "Lucide",
+          "repos": 4
+        },
+        {
+          "name": "Next.js",
+          "repos": 3
+        },
+        {
+          "name": "Radix UI",
+          "repos": 2
+        },
+        {
+          "name": "React Router",
+          "repos": 2
+        },
+        {
+          "name": "shadcn/ui",
+          "repos": 2
+        },
+        {
+          "name": "Zod",
+          "repos": 2
+        },
+        {
+          "name": "Zustand",
+          "repos": 2
+        },
+        {
+          "name": "i18next",
+          "repos": 1
+        },
+        {
+          "name": "KaTeX",
+          "repos": 1
+        },
+        {
+          "name": "Recharts",
+          "repos": 1
+        },
+        {
+          "name": "TanStack Query",
+          "repos": 1
+        }
+      ]
+    },
+    {
+      "group": "MOTION & 3D",
+      "items": [
+        {
+          "name": "GSAP",
+          "repos": 7
+        },
+        {
+          "name": "Lenis",
+          "repos": 6
+        },
+        {
+          "name": "Three.js",
+          "repos": 4
+        },
+        {
+          "name": "drei",
+          "repos": 2
+        },
+        {
+          "name": "Framer Motion",
+          "repos": 2
+        },
+        {
+          "name": "React Three Fiber",
+          "repos": 2
+        },
+        {
+          "name": "PixiJS",
+          "repos": 1
+        },
+        {
+          "name": "Rapier",
+          "repos": 1
+        },
+        {
+          "name": "Rive",
+          "repos": 1
+        },
+        {
+          "name": "Tweakpane",
+          "repos": 1
+        }
+      ]
+    },
+    {
+      "group": "BACKEND & AI",
+      "items": [
+        {
+          "name": "Requests",
+          "repos": 4
+        },
+        {
+          "name": "FastAPI",
+          "repos": 3
+        },
+        {
+          "name": "Hono",
+          "repos": 3
+        },
+        {
+          "name": "PyJWT",
+          "repos": 3
+        },
+        {
+          "name": "Uvicorn",
+          "repos": 3
+        },
+        {
+          "name": "Anthropic API",
+          "repos": 1
+        },
+        {
+          "name": "httpx",
+          "repos": 1
+        },
+        {
+          "name": "MCP",
+          "repos": 1
+        },
+        {
+          "name": "OpenAI API",
+          "repos": 1
+        },
+        {
+          "name": "PyTorch",
+          "repos": 1
+        },
+        {
+          "name": "Starlette",
+          "repos": 1
+        },
+        {
+          "name": "WebSockets",
+          "repos": 1
+        }
+      ]
+    },
+    {
+      "group": "DATA",
+      "items": [
+        {
+          "name": "Supabase",
+          "repos": 4
+        },
+        {
+          "name": "NumPy",
+          "repos": 3
+        },
+        {
+          "name": "D3",
+          "repos": 2
+        },
+        {
+          "name": "PGlite",
+          "repos": 2
+        },
+        {
+          "name": "Postgres",
+          "repos": 2
+        },
+        {
+          "name": "Google Sheets API",
+          "repos": 1
+        },
+        {
+          "name": "lxml",
+          "repos": 1
+        },
+        {
+          "name": "MoviePy",
+          "repos": 1
+        },
+        {
+          "name": "NetworkX",
+          "repos": 1
+        },
+        {
+          "name": "Pillow",
+          "repos": 1
+        },
+        {
+          "name": "yfinance",
+          "repos": 1
+        }
+      ]
+    },
+    {
+      "group": "MOBILE",
+      "items": [
+        {
+          "name": "Capacitor",
+          "repos": 1
+        },
+        {
+          "name": "Expo",
+          "repos": 1
+        },
+        {
+          "name": "NativeWind",
+          "repos": 1
+        },
+        {
+          "name": "PyQt",
+          "repos": 1
+        },
+        {
+          "name": "pywebview",
+          "repos": 1
+        },
+        {
+          "name": "React Native",
+          "repos": 1
+        },
+        {
+          "name": "Reanimated",
+          "repos": 1
+        },
+        {
+          "name": "Sentry",
+          "repos": 1
+        }
+      ]
+    },
+    {
+      "group": "INFRA & TOOLING",
+      "items": [
+        {
+          "name": "TypeScript",
+          "repos": 12
+        },
+        {
+          "name": "Cloudflare Workers",
+          "repos": 6
+        },
+        {
+          "name": "GitHub Actions",
+          "repos": 6
+        },
+        {
+          "name": "ESLint",
+          "repos": 4
+        },
+        {
+          "name": "Vitest",
+          "repos": 4
+        },
+        {
+          "name": "Vercel",
+          "repos": 3
+        },
+        {
+          "name": "pytest",
+          "repos": 2
+        },
+        {
+          "name": "Playwright",
+          "repos": 1
+        },
+        {
+          "name": "Puppeteer",
+          "repos": 1
+        },
+        {
+          "name": "Turborepo",
+          "repos": 1
+        }
+      ]
+    }
+  ],
   "login": "Alfais1",
   "name": null,
   "url": "https://github.com/Alfais1",
   "since": "2024",
-  "fetchedAt": "2026-09-04T07:57:19.330Z",
+  "fetchedAt": "2026-09-04T12:59:59.220Z",
   "all": {
     "commits": 114,
     "prs": 2,
     "issues": 0,
     "reviews": 0,
-    "private": 0,
-    "contributions": 134
+    "private": 131,
+    "contributions": 136
   },
   "lastYear": {
-    "contributions": 105,
-    "commits": 86,
-    "private": 0
+    "contributions": 107,
+    "commits": 3,
+    "private": 103
   },
   "repos": {
-    "total": 19,
-    "private": 18,
+    "total": 21,
+    "private": 20,
     "stars": 4
   },
   "repoList": [
+    {
+      "name": "parlor",
+      "url": "https://github.com/Alfais1/parlor",
+      "isPrivate": true,
+      "description": "",
+      "pushedAt": "2026-09-04T12:53:45Z",
+      "language": "TypeScript",
+      "color": "#3178c6"
+    },
+    {
+      "name": "sarap",
+      "url": "https://github.com/Alfais1/sarap",
+      "isPrivate": true,
+      "description": "Market intelligence over Krisha (property), Kolesa (cars) and Goszakup (procurement) in Kazakhstan",
+      "pushedAt": "2026-09-04T12:36:59Z",
+      "language": "TypeScript",
+      "color": "#3178c6"
+    },
     {
       "name": "Alfais1",
       "url": "https://github.com/Alfais1/Alfais1",
       "isPrivate": false,
       "description": "",
-      "pushedAt": "2026-09-03T13:19:52Z",
+      "pushedAt": "2026-09-04T07:57:20Z",
       "language": "JavaScript",
       "color": "#f1e05a"
     },
@@ -2148,8 +2458,8 @@
       },
       {
         "date": "2026-09-04",
-        "count": 0,
-        "level": 0
+        "count": 2,
+        "level": 1
       }
     ]
   ],
@@ -2157,68 +2467,68 @@
     {
       "name": "TypeScript",
       "color": "#3178c6",
-      "size": 5907431,
-      "pct": 33.93505693458566
+      "size": 7211386,
+      "pct": 38.421508755489995
     },
     {
       "name": "Python",
       "color": "#3572A5",
       "size": 5692375,
-      "pct": 32.699674311559804
+      "pct": 30.328377360750398
     },
     {
       "name": "TeX",
       "color": "#3D6117",
       "size": 2607276,
-      "pct": 14.977417341680123
+      "pct": 13.891293249588767
     },
     {
       "name": "BibTeX Style",
       "color": "#8A8A9C",
       "size": 938916,
-      "pct": 5.393574282423853
+      "pct": 5.002446036680001
     },
     {
       "name": "HTML",
       "color": "#e34c26",
-      "size": 826160,
-      "pct": 4.745850884602341
+      "size": 846199,
+      "pct": 4.508459578697754
     },
     {
       "name": "JavaScript",
       "color": "#f1e05a",
       "size": 540477,
-      "pct": 3.104753617407305
+      "pct": 2.8796048065712982
     },
     {
       "name": "CSS",
       "color": "#663399",
-      "size": 448091,
-      "pct": 2.574045062375747
+      "size": 483249,
+      "pct": 2.5747000208533817
     },
     {
       "name": "Shell",
       "color": "#89e051",
-      "size": 232816,
-      "pct": 1.3374044005393368
+      "size": 234754,
+      "pct": 1.2507447065496562
     },
     {
       "name": "PLpgSQL",
       "color": "#336790",
       "size": 197660,
-      "pct": 1.1354518323938445
+      "pct": 1.0531117625114164
     },
     {
       "name": "Batchfile",
       "color": "#C1F12E",
       "size": 10522,
-      "pct": 0.0604433076011739
+      "pct": 0.05606011314957565
     },
     {
       "name": "Makefile",
       "color": "#427819",
       "size": 6324,
-      "pct": 0.03632802483081388
+      "pct": 0.03369360915775674
     }
   ]
 }
