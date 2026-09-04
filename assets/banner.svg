@@ -53,13 +53,7 @@
 <rect x="943.8" y="34" width="194.2" height="38" rx="4" fill="#08080C" fill-opacity="0.72"/>
 <text x="1128" y="46" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="end" letter-spacing="1.5" textLength="173.2" lengthAdjust="spacing" >51.1694 N · 71.4491 E</text>
 <text x="1128" y="64" font-size="11" fill="#4A4A5C" font-weight="500" text-anchor="end" letter-spacing="1.5" textLength="81.7" lengthAdjust="spacing" >SINCE 2024</text>
-<g transform="translate(72 466)">
-  <circle cx="0" cy="-4" r="4" fill="#3DFF8C"/>
-  <text x="12" y="0" font-size="11" fill="#3DFF8C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="48.4" lengthAdjust="spacing" >ONLINE</text>
-  <text x="84" y="0" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="139.9" lengthAdjust="spacing" >CONTRIBUTIONS 136</text>
-  <text x="248" y="0" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="65.1" lengthAdjust="spacing" >REPOS 21</text>
-  <text x="338.2" y="0" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="73.4" lengthAdjust="spacing" >STREAK 3D</text>
-</g>
+<g transform="translate(72 466)"><text x="0" y="0" font-size="10" fill="#4A4A5C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="98.6" lengthAdjust="spacing" >CONTRIBUTIONS</text><text x="106.6" y="0" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="start" letter-spacing="0.5" textLength="21.5" lengthAdjust="spacing" >137</text><text x="154.06" y="0" font-size="10" fill="#4A4A5C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="90.9" lengthAdjust="spacing" >REPOSITORIES</text><text x="252.96" y="0" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="start" letter-spacing="0.5" textLength="14.1" lengthAdjust="spacing" >21</text><text x="293.1" y="0" font-size="10" fill="#4A4A5C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="52.4" lengthAdjust="spacing" >COMMITS</text><text x="353.5" y="0" font-size="11" fill="#EDEDF3" font-weight="500" text-anchor="start" letter-spacing="0.5" textLength="21.5" lengthAdjust="spacing" >115</text></g>
 <rect x="952" y="452" width="186" height="22" rx="4" fill="#08080C" fill-opacity="0.72"/>
 <text x="1128" y="466" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="end" letter-spacing="1.5" textLength="164.9" lengthAdjust="spacing" >LAST SYNC 2026.09.04</text>
 <g stroke="#F5E900" stroke-width="1.5" fill="none" opacity="0.9">

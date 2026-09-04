@@ -5,7 +5,7 @@
 <text x="20" y="30" font-size="13" fill="#F5E900" font-weight="700" text-anchor="start" letter-spacing="2.5" textLength="82.0" lengthAdjust="spacing" >// STATS</text>
 <line x1="114.0" y1="26" x2="372.5" y2="26" stroke="#22222E"/>
 <text x="475" y="30" font-size="9" fill="#00F0FF" font-weight="500" text-anchor="end" letter-spacing="1.5" textLength="90.5" lengthAdjust="spacing" >INCL. PRIVATE</text>
-<text x="20" y="84" font-size="40" fill="#F5E900" font-weight="800" text-anchor="start" letter-spacing="-1" textLength="72.4" lengthAdjust="spacing" >136</text>
+<text x="20" y="84" font-size="40" fill="#F5E900" font-weight="800" text-anchor="start" letter-spacing="-1" textLength="72.4" lengthAdjust="spacing" >137</text>
 <text x="20" y="102" font-size="9" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="302.9" lengthAdjust="spacing" >CONTRIBUTIONS · ALL TIME · PRIVATE INCLUDED</text>
 <text x="20" y="132" font-size="10" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="52.4" lengthAdjust="spacing" >COMMITS</text>
 <rect x="150" y="125" width="110" height="3" fill="#22222E"/>

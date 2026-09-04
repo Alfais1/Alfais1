@@ -16,8 +16,7 @@
 <text x="133.7" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="48.2" lengthAdjust="spacing" >NEXT.JS</text></g><g><rect x="169.4" y="128" width="53.2" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
 <text x="196" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="41.2" lengthAdjust="spacing" >PYTHON</text></g><g><rect x="228.60000000000002" y="128" width="47" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
 <text x="252.10000000000002" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="34.2" lengthAdjust="spacing" >QUANT</text></g>
-<text x="420" y="162" font-size="9" fill="#4A4A5C" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="163.7" lengthAdjust="spacing" >github.com/Alfais1/antipode</text>
-<text x="20" y="162" font-size="9" fill="#00F0FF" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="41.0" lengthAdjust="spacing" >OPEN ↗</text>
+<text x="420" y="162" font-size="9" fill="#4A4A5C" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="163.7" lengthAdjust="spacing" >github.com/Alfais1/antipode</text><text x="20" y="162" font-size="9" fill="#00F0FF" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="41.0" lengthAdjust="spacing" >OPEN ↗</text>
 <g stroke="#F5E900" stroke-width="1.5" fill="none" opacity="0.9">
 <path d="M6 16V6h10"/><path d="M424 6h10v10"/>
 <path d="M6 160v10h10"/><path d="M424 170h10v-10"/></g>

@@ -9,15 +9,14 @@
   <text x="-14" y="0" font-size="9" fill="#FF2A6D" font-weight="500" text-anchor="end" letter-spacing="1.5" textLength="48.1" lengthAdjust="spacing" >PRIVATE</text>
   <circle cx="-4" cy="-3.5" r="3.5" fill="#FF2A6D"/>
 </g>
-<text x="20" y="58" font-size="19" fill="#F5E900" font-weight="800" text-anchor="start" letter-spacing="1" textLength="50.1" lengthAdjust="spacing" >WONK</text>
+<text x="20" y="58" font-size="19" fill="#F5E900" font-weight="800" text-anchor="start" letter-spacing="1" textLength="50.1" lengthAdjust="spacing" >TABU</text>
 <text x="20" y="80" font-size="12" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="0" textLength="386.9" lengthAdjust="spacing" >Archive search: hybrid keyword + vector retrieval, a</text><text x="20" y="97" font-size="12" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="0" textLength="312.5" lengthAdjust="spacing" >citing assistant and a scan viewer, all on</text><text x="20" y="114" font-size="12" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="0" textLength="81.8" lengthAdjust="spacing" >Cloudflare.</text>
 <g><rect x="20" y="128" width="78" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
 <text x="59" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="69.2" lengthAdjust="spacing" >TYPESCRIPT</text></g><g><rect x="104" y="128" width="78" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
 <text x="143" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="69.2" lengthAdjust="spacing" >CLOUDFLARE</text></g><g><rect x="188" y="128" width="71.8" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
 <text x="223.9" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="62.2" lengthAdjust="spacing" >VECTORIZE</text></g><g><rect x="265.8" y="128" width="34.6" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
 <text x="283.1" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="20.2" lengthAdjust="spacing" >RAG</text></g>
-<text x="420" y="162" font-size="9" fill="#4A4A5C" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="169.7" lengthAdjust="spacing" >github.com/Alfais1/wonk-demo</text>
-<text x="20" y="162" font-size="9" fill="#00F0FF" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="41.0" lengthAdjust="spacing" >OPEN ↗</text>
+
 <g stroke="#F5E900" stroke-width="1.5" fill="none" opacity="0.9">
 <path d="M6 16V6h10"/><path d="M424 6h10v10"/>
 <path d="M6 160v10h10"/><path d="M424 170h10v-10"/></g>

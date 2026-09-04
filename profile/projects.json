@@ -3,64 +3,134 @@
     "slug": "antipode",
     "name": "ANTIPODE",
     "desc": "Quantitative research terminal. Four desks × six functions: portfolio analytics, evaluation harness, portfolio construction, regime detection.",
-    "tags": ["TypeScript", "Next.js", "Python", "Quant"],
+    "tags": [
+      "TypeScript",
+      "Next.js",
+      "Python",
+      "Quant"
+    ],
     "status": "private",
-    "url": "https://github.com/Alfais1/antipode"
+    "url": "https://github.com/Alfais1/antipode",
+    "repo": "antipode"
   },
   {
-    "slug": "wonk",
-    "name": "WONK",
+    "slug": "tabu",
+    "name": "TABU",
     "desc": "Archive search: hybrid keyword + vector retrieval, a citing assistant and a scan viewer, all on Cloudflare.",
-    "tags": ["TypeScript", "Cloudflare", "Vectorize", "RAG"],
+    "tags": [
+      "TypeScript",
+      "Cloudflare",
+      "Vectorize",
+      "RAG"
+    ],
     "status": "private",
-    "url": "https://github.com/Alfais1/wonk-demo"
+    "url": "",
+    "repo": "wonk-demo"
+  },
+  {
+    "slug": "parlor",
+    "name": "PARLOR",
+    "desc": "Party games where the phone is the controller — tilt to steer, swing it like a racket, buzz in. Six games, one room, no app to install.",
+    "tags": [
+      "TypeScript",
+      "Cloudflare",
+      "WebSockets",
+      "Games"
+    ],
+    "status": "live",
+    "url": "https://parlor-room.alfais2004.workers.dev",
+    "repo": "parlor"
+  },
+  {
+    "slug": "sarap",
+    "name": "SARAP",
+    "desc": "Market intelligence over Krisha (property), Kolesa (cars) and Goszakup (procurement) in Kazakhstan.",
+    "tags": [
+      "TypeScript",
+      "Crawlers",
+      "Postgres",
+      "Turborepo"
+    ],
+    "status": "private",
+    "url": "https://github.com/Alfais1/sarap",
+    "repo": "sarap"
   },
   {
     "slug": "gos",
     "name": "GOS",
     "desc": "Kazakhstan government personnel tracker: appointments, org structures, dated co-tenure and a private relations layer.",
-    "tags": ["JavaScript", "Graph", "Data"],
+    "tags": [
+      "JavaScript",
+      "Graph",
+      "Data"
+    ],
     "status": "private",
-    "url": "https://github.com/Alfais1/gos"
+    "url": "https://github.com/Alfais1/gos",
+    "repo": "gos"
   },
   {
     "slug": "cfa-faculty",
     "name": "CFA FACULTY",
     "desc": "Eleven Telegram tutor bots for CFA Level II plus a control deck to run them.",
-    "tags": ["Python", "Telegram", "LLM"],
+    "tags": [
+      "Python",
+      "Telegram",
+      "LLM"
+    ],
     "status": "live",
-    "url": "https://deck.alfais.uk"
+    "url": "https://deck.alfais.uk",
+    "repo": "cfa-faculty"
   },
   {
     "slug": "hermes",
     "name": "HERMES TRADING FLOOR",
     "desc": "Multi-agent Telegram briefing system: analyst agents argue, a desk head summarises, you get the brief.",
-    "tags": ["Python", "Agents", "Telegram"],
+    "tags": [
+      "Python",
+      "Agents",
+      "Telegram"
+    ],
     "status": "private",
-    "url": "https://github.com/Alfais1/hermes-trading-floor"
+    "url": "https://github.com/Alfais1/hermes-trading-floor",
+    "repo": "hermes-trading-floor"
   },
   {
     "slug": "sholu",
     "name": "SHOLU",
     "desc": "Self-hosted personal dashboard: music, books, films, skills and code in one place.",
-    "tags": ["Python", "Dashboard", "Self-hosted"],
+    "tags": [
+      "Python",
+      "Dashboard",
+      "Self-hosted"
+    ],
     "status": "private",
-    "url": "https://github.com/Alfais1/sholu-dashboard"
+    "url": "https://github.com/Alfais1/sholu-dashboard",
+    "repo": "sholu-dashboard"
   },
   {
     "slug": "relation",
     "name": "RELATION",
     "desc": "Personal relationship manager, connection finder and social-graph analyser. Vercel + Postgres behind Cloudflare Access.",
-    "tags": ["TypeScript", "Postgres", "Vercel"],
+    "tags": [
+      "TypeScript",
+      "Postgres",
+      "Vercel"
+    ],
     "status": "private",
-    "url": "https://github.com/Alfais1/relation"
+    "url": "https://github.com/Alfais1/relation",
+    "repo": "relation"
   },
   {
     "slug": "coterie",
     "name": "COTERIE",
     "desc": "Invite-and-application dating for Almaty and Astana.",
-    "tags": ["TypeScript", "Next.js", "Product"],
+    "tags": [
+      "TypeScript",
+      "Next.js",
+      "Product"
+    ],
     "status": "private",
-    "url": "https://github.com/Alfais1/coterie"
+    "url": "https://github.com/Alfais1/coterie",
+    "repo": "coterie"
   }
 ]

@@ -398,13 +398,15 @@ ${label(72, 64, cfg.location, { size: 11, fill: T.muted })}
 <rect x="${1128 - Math.max(cfg.coords.length, 10) * 8.2 - 12}" y="34" width="${Math.max(cfg.coords.length, 10) * 8.2 + 22}" height="38" rx="4" fill="${T.bg}" fill-opacity="0.72"/>
 ${label(1128, 46, cfg.coords, { size: 11, fill: T.muted, anchor: "end" })}
 ${label(1128, 64, `SINCE ${data.since}`, { size: 11, fill: T.dim, anchor: "end" })}
-<g transform="translate(72 ${H - 34})">
-  <circle cx="0" cy="-4" r="4" fill="${T.green}"/>
-  ${label(12, 0, "ONLINE", { size: 11, fill: T.green })}
-  ${label(84, 0, `CONTRIBUTIONS ${fmt(data.all.contributions)}`, { size: 11, fill: T.muted })}
-  ${label(84 + (`CONTRIBUTIONS ${fmt(data.all.contributions)}`.length + 3) * 8.2, 0, `REPOS ${data.repos.total}`, { size: 11, fill: T.muted })}
-  ${label(84 + (`CONTRIBUTIONS ${fmt(data.all.contributions)}`.length + 3) * 8.2 + (`REPOS ${data.repos.total}`.length + 3) * 8.2, 0, `STREAK ${data.streak.current}D`, { size: 11, fill: T.muted })}
-</g>
+<g transform="translate(72 ${H - 34})">${(() => {
+  const stats = [["CONTRIBUTIONS", fmt(data.all.contributions)], ["REPOSITORIES", String(data.repos.total)], ["COMMITS", fmt(data.all.commits)]];
+  let x = 0, out = "";
+  for (const [k, v] of stats) {
+    out += label(x, 0, k, { size: 10, fill: T.dim }) + label(x + tw(k, 10, 1.5) + 8, 0, v, { size: 11, fill: T.text, ls: 0.5 });
+    x += tw(k, 10, 1.5) + 8 + tw(v, 11, 0.5) + 26;
+  }
+  return out;
+})()}</g>
 <rect x="${1128 - 20 * 8.2 - 12}" y="${H - 48}" width="${20 * 8.2 + 22}" height="22" rx="4" fill="${T.bg}" fill-opacity="0.72"/>
 ${label(1128, H - 34, `LAST SYNC ${syncDate}`, { size: 11, fill: T.muted, anchor: "end" })}`;
 
@@ -582,17 +584,16 @@ function projectCard(p, i) {
   ${label(-14, 0, live ? "LIVE" : "PRIVATE", { size: 9, fill: statusC, anchor: "end" })}
   <circle cx="-4" cy="-3.5" r="3.5" fill="${statusC}"/>
 </g>`;
-  const host = p.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  const host = (p.url || "").replace(/^https?:\/\//, "").replace(/\/$/, "");
   const body = `
 ${frame(W, H)}
-${label(20, 30, `0${i + 1}`, { size: 11, fill: T.dim, weight: 700 })}
+${label(20, 30, String(i + 1).padStart(2, "0"), { size: 11, fill: T.dim, weight: 700 })}
 <line x1="44" y1="26" x2="${W - 90}" y2="26" stroke="${T.line}"/>
 ${status}
 ${label(20, 58, p.name, { size: 19, fill: T.yellow, weight: 800, ls: 1 })}
 ${desc}
 ${chips}
-${label(W - 20, H - 14, host, { size: 9, fill: T.dim, anchor: "end", ls: 0.5 })}
-${label(20, H - 14, "OPEN ↗", { size: 9, fill: T.cyan })}
+${host ? label(W - 20, H - 14, host, { size: 9, fill: T.dim, anchor: "end", ls: 0.5 }) + label(20, H - 14, "OPEN ↗", { size: 9, fill: T.cyan }) : ""}
 ${corners(W, H, T.yellow, 10, 6)}
 ${scanOverlay(W, H)}`;
   return svg(W, H, body, scanDef);
@@ -649,10 +650,10 @@ function stack() {
     const startY = y;
     let x = left, rowY = y;
     for (const it of g.items) {
-      // the count is what makes this honest: how many repos actually pull it in
-      const txt = `${it.name.toUpperCase()} ${it.repos}`;
-      const c = chip(x, rowY, txt, it.repos >= 4 ? T.yellow : T.cyan, 10);
-      if (x + c.w > W - 20) { rowY += rowH; x = left; body += chip(x, rowY, txt, it.repos >= 4 ? T.yellow : T.cyan, 10).svg; x += chip(x, rowY, txt).w + 7; continue; }
+      // items arrive sorted by how many repos use them; yellow marks the core few
+      const txt = it.name.toUpperCase(), col = it.repos >= 4 ? T.yellow : T.cyan;
+      if (x + chip(x, rowY, txt, col, 10).w > W - 20) { rowY += rowH; x = left; }
+      const c = chip(x, rowY, txt, col, 10);
       body += c.svg; x += c.w + 7;
     }
     body += label(20, startY + 15, g.group, { size: 10, fill: T.muted });
@@ -661,13 +662,14 @@ function stack() {
   }
   const H = y - 2;
   const total = groups.reduce((n, g) => n + g.items.length, 0);
-  return svg(W, H, `${frame(W, H)}${cardTitle(W, "// STACK", `${total} TOOLS · COUNT = REPOSITORIES USING IT`)}${body}${corners(W, H, T.cyan, 10, 6)}${scanOverlay(W, H)}`, scanDef);
+  return svg(W, H, `${frame(W, H)}${cardTitle(W, "// STACK", `${total} TOOLS · SCANNED FROM DEPENDENCY MANIFESTS`)}${body}${corners(W, H, T.cyan, 10, 6)}${scanOverlay(W, H)}`, scanDef);
 }
 
 function vault() {
   const W = 1000, rowH = 28;
-  const featured = new Set(projects.map((p) => (p.url.match(/github\.com\/[^/]+\/([^/#?]+)/) || [])[1]).filter(Boolean));
-  const rows = (data.repoList || []).filter((r) => !featured.has(r.name)).sort((a, b) => b.pushedAt.localeCompare(a.pushedAt));
+  const featured = new Set(projects.map((p) => p.repo || ((p.url || "").match(/github\.com\/[^/]+\/([^/#?]+)/) || [])[1]).filter(Boolean));
+  // the profile repo is this page itself, not a project worth listing
+  const rows = (data.repoList || []).filter((r) => !featured.has(r.name) && r.name !== data.login).sort((a, b) => b.pushedAt.localeCompare(a.pushedAt));
   const H = 50 + rows.length * rowH + 14;
   let body = "";
   rows.forEach((r, i) => {

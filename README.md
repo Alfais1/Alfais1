@@ -15,7 +15,11 @@
 <table align="center" border="0" cellspacing="0" cellpadding="6">
   <tr>
     <td width="50%"><a href="https://github.com/Alfais1/antipode"><img src="assets/project-antipode.svg" width="100%" alt="ANTIPODE"/></a></td>
-    <td width="50%"><a href="https://github.com/Alfais1/wonk-demo"><img src="assets/project-wonk.svg" width="100%" alt="WONK"/></a></td>
+    <td width="50%"><img src="assets/project-tabu.svg" width="100%" alt="TABU"/></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="https://parlor-room.alfais2004.workers.dev"><img src="assets/project-parlor.svg" width="100%" alt="PARLOR"/></a></td>
+    <td width="50%"><a href="https://github.com/Alfais1/sarap"><img src="assets/project-sarap.svg" width="100%" alt="SARAP"/></a></td>
   </tr>
   <tr>
     <td width="50%"><a href="https://github.com/Alfais1/gos"><img src="assets/project-gos.svg" width="100%" alt="GOS"/></a></td>

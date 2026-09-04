@@ -2,7 +2,7 @@
 <defs><pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#ffffff" opacity="0.028"/></pattern></defs>
 
 <rect x="0.5" y="0.5" width="439" height="175" rx="8" fill="#0E0E14" stroke="#22222E"/>
-<text x="20" y="30" font-size="11" fill="#4A4A5C" font-weight="700" text-anchor="start" letter-spacing="1.5" textLength="15.1" lengthAdjust="spacing" >03</text>
+<text x="20" y="30" font-size="11" fill="#4A4A5C" font-weight="700" text-anchor="start" letter-spacing="1.5" textLength="15.1" lengthAdjust="spacing" >05</text>
 <line x1="44" y1="26" x2="350" y2="26" stroke="#22222E"/>
 
 <g transform="translate(420 30)">
@@ -15,8 +15,7 @@
 <text x="59" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="69.2" lengthAdjust="spacing" >JAVASCRIPT</text></g><g><rect x="104" y="128" width="47" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
 <text x="127.5" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="34.2" lengthAdjust="spacing" >GRAPH</text></g><g><rect x="157" y="128" width="40.8" height="20" rx="3" fill="#13131B" stroke="#00F0FF" stroke-opacity="0.55"/>
 <text x="177.4" y="140.5" font-size="10" fill="#00F0FF" font-weight="500" text-anchor="middle" letter-spacing="0.8" textLength="27.2" lengthAdjust="spacing" >DATA</text></g>
-<text x="420" y="162" font-size="9" fill="#4A4A5C" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="133.3" lengthAdjust="spacing" >github.com/Alfais1/gos</text>
-<text x="20" y="162" font-size="9" fill="#00F0FF" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="41.0" lengthAdjust="spacing" >OPEN ↗</text>
+<text x="420" y="162" font-size="9" fill="#4A4A5C" font-weight="500" text-anchor="end" letter-spacing="0.5" textLength="133.3" lengthAdjust="spacing" >github.com/Alfais1/gos</text><text x="20" y="162" font-size="9" fill="#00F0FF" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="41.0" lengthAdjust="spacing" >OPEN ↗</text>
 <g stroke="#F5E900" stroke-width="1.5" fill="none" opacity="0.9">
 <path d="M6 16V6h10"/><path d="M424 6h10v10"/>
 <path d="M6 160v10h10"/><path d="M424 170h10v-10"/></g>
