@@ -295,18 +295,18 @@
   "name": null,
   "url": "https://github.com/Alfais1",
   "since": "2024",
-  "fetchedAt": "2026-09-04T13:20:56.036Z",
+  "fetchedAt": "2026-09-06T07:52:43.983Z",
   "all": {
-    "commits": 116,
+    "commits": 119,
     "prs": 2,
     "issues": 0,
     "reviews": 0,
     "private": 0,
-    "contributions": 137
+    "contributions": 141
   },
   "lastYear": {
-    "contributions": 108,
-    "commits": 87,
+    "contributions": 112,
+    "commits": 91,
     "private": 0
   },
   "repos": {
@@ -316,22 +316,22 @@
   },
   "repoList": [
     {
-      "name": "Alfais1",
-      "url": "https://github.com/Alfais1/Alfais1",
-      "isPrivate": false,
-      "description": "",
-      "pushedAt": "2026-09-04T13:20:34Z",
-      "language": "JavaScript",
-      "color": "#f1e05a"
-    },
-    {
       "name": "parlor",
       "url": "https://github.com/Alfais1/parlor",
       "isPrivate": true,
       "description": "",
-      "pushedAt": "2026-09-04T12:53:45Z",
+      "pushedAt": "2026-09-04T20:44:09Z",
       "language": "TypeScript",
       "color": "#3178c6"
+    },
+    {
+      "name": "Alfais1",
+      "url": "https://github.com/Alfais1/Alfais1",
+      "isPrivate": false,
+      "description": "",
+      "pushedAt": "2026-09-04T13:20:57Z",
+      "language": "JavaScript",
+      "color": "#f1e05a"
     },
     {
       "name": "sarap",
@@ -343,8 +343,8 @@
       "color": "#3178c6"
     },
     {
-      "name": "wonk-demo",
-      "url": "https://github.com/Alfais1/wonk-demo",
+      "name": "tabu",
+      "url": "https://github.com/Alfais1/tabu",
       "isPrivate": true,
       "description": "WONK archive search demo: hybrid search, citing assistant, scan viewer on Cloudflare",
       "pushedAt": "2026-09-03T13:06:23Z",
@@ -506,43 +506,6 @@
     }
   ],
   "weeks": [
-    [
-      {
-        "date": "2025-08-31",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-09-01",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-09-02",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-09-03",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-09-04",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-09-05",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-09-06",
-        "count": 0,
-        "level": 0
-      }
-    ],
     [
       {
         "date": "2025-09-07",
@@ -2458,8 +2421,20 @@
       },
       {
         "date": "2026-09-04",
-        "count": 3,
-        "level": 2
+        "count": 6,
+        "level": 3
+      },
+      {
+        "date": "2026-09-05",
+        "count": 1,
+        "level": 1
+      }
+    ],
+    [
+      {
+        "date": "2026-09-06",
+        "count": 0,
+        "level": 0
       }
     ]
   ],
@@ -2467,68 +2442,68 @@
     {
       "name": "TypeScript",
       "color": "#3178c6",
-      "size": 7211386,
-      "pct": 38.40738515682753
+      "size": 7277923,
+      "pct": 38.625014541585536
     },
     {
       "name": "Python",
       "color": "#3572A5",
       "size": 5692375,
-      "pct": 30.31722876602308
+      "pct": 30.210276634028414
     },
     {
       "name": "TeX",
       "color": "#3D6117",
       "size": 2607276,
-      "pct": 13.886186863683717
+      "pct": 13.837199626037123
     },
     {
       "name": "BibTeX Style",
       "color": "#8A8A9C",
       "size": 938916,
-      "pct": 5.000607156780663
+      "pct": 4.98296617775804
     },
     {
       "name": "HTML",
       "color": "#e34c26",
       "size": 846199,
-      "pct": 4.506802286318095
+      "pct": 4.4909033360307795
     },
     {
       "name": "JavaScript",
       "color": "#f1e05a",
-      "size": 547379,
-      "pct": 2.9153058898468474
+      "size": 547314,
+      "pct": 2.904676404080305
     },
     {
       "name": "CSS",
       "color": "#663399",
       "size": 483249,
-      "pct": 2.573753571040539
+      "pct": 2.5646739670379404
     },
     {
       "name": "Shell",
       "color": "#89e051",
       "size": 234754,
-      "pct": 1.2502849376119778
+      "pct": 1.2458742231396749
     },
     {
       "name": "PLpgSQL",
       "color": "#336790",
       "size": 197660,
-      "pct": 1.0527246426829087
+      "pct": 1.0490108749831233
     },
     {
       "name": "Batchfile",
       "color": "#C1F12E",
       "size": 10522,
-      "pct": 0.056039505667861804
+      "pct": 0.05584181132536893
     },
     {
       "name": "Makefile",
       "color": "#427819",
       "size": 6324,
-      "pct": 0.03368122351677989
+      "pct": 0.03356240399369256
     }
   ]
 }
