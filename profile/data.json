@@ -295,18 +295,18 @@
   "name": null,
   "url": "https://github.com/Alfais1",
   "since": "2024",
-  "fetchedAt": "2026-09-08T08:03:00.800Z",
+  "fetchedAt": "2026-09-09T08:06:57.007Z",
   "all": {
-    "commits": 132,
+    "commits": 142,
     "prs": 2,
     "issues": 0,
     "reviews": 0,
     "private": 0,
-    "contributions": 154
+    "contributions": 164
   },
   "lastYear": {
-    "contributions": 125,
-    "commits": 104,
+    "contributions": 135,
+    "commits": 114,
     "private": 0
   },
   "repos": {
@@ -316,20 +316,20 @@
   },
   "repoList": [
     {
-      "name": "parlor",
-      "url": "https://github.com/Alfais1/parlor",
-      "isPrivate": true,
-      "description": "",
-      "pushedAt": "2026-09-08T07:53:26Z",
-      "language": "TypeScript",
-      "color": "#3178c6"
-    },
-    {
       "name": "sarap",
       "url": "https://github.com/Alfais1/sarap",
       "isPrivate": true,
       "description": "Market intelligence over Krisha (property), Kolesa (cars) and Goszakup (procurement) in Kazakhstan",
-      "pushedAt": "2026-09-08T07:13:46Z",
+      "pushedAt": "2026-09-08T12:01:02Z",
+      "language": "TypeScript",
+      "color": "#3178c6"
+    },
+    {
+      "name": "parlor",
+      "url": "https://github.com/Alfais1/parlor",
+      "isPrivate": true,
+      "description": "",
+      "pushedAt": "2026-09-08T11:28:07Z",
       "language": "TypeScript",
       "color": "#3178c6"
     },
@@ -338,7 +338,7 @@
       "url": "https://github.com/Alfais1/Alfais1",
       "isPrivate": false,
       "description": "",
-      "pushedAt": "2026-09-07T08:15:37Z",
+      "pushedAt": "2026-09-08T08:03:02Z",
       "language": "JavaScript",
       "color": "#f1e05a"
     },
@@ -2158,7 +2158,7 @@
       {
         "date": "2026-07-16",
         "count": 5,
-        "level": 3
+        "level": 1
       },
       {
         "date": "2026-07-17",
@@ -2180,7 +2180,7 @@
       {
         "date": "2026-07-20",
         "count": 3,
-        "level": 2
+        "level": 1
       },
       {
         "date": "2026-07-21",
@@ -2254,7 +2254,7 @@
       {
         "date": "2026-08-03",
         "count": 3,
-        "level": 2
+        "level": 1
       },
       {
         "date": "2026-08-04",
@@ -2328,12 +2328,12 @@
       {
         "date": "2026-08-17",
         "count": 11,
-        "level": 4
+        "level": 3
       },
       {
         "date": "2026-08-18",
         "count": 5,
-        "level": 3
+        "level": 1
       },
       {
         "date": "2026-08-19",
@@ -2343,7 +2343,7 @@
       {
         "date": "2026-08-20",
         "count": 13,
-        "level": 4
+        "level": 3
       },
       {
         "date": "2026-08-21",
@@ -2365,12 +2365,12 @@
       {
         "date": "2026-08-24",
         "count": 7,
-        "level": 4
+        "level": 2
       },
       {
         "date": "2026-08-25",
         "count": 8,
-        "level": 4
+        "level": 2
       },
       {
         "date": "2026-08-26",
@@ -2417,12 +2417,12 @@
       {
         "date": "2026-09-03",
         "count": 4,
-        "level": 2
+        "level": 1
       },
       {
         "date": "2026-09-04",
         "count": 6,
-        "level": 3
+        "level": 2
       },
       {
         "date": "2026-09-05",
@@ -2443,8 +2443,13 @@
       },
       {
         "date": "2026-09-08",
-        "count": 11,
+        "count": 21,
         "level": 4
+      },
+      {
+        "date": "2026-09-09",
+        "count": 0,
+        "level": 0
       }
     ]
   ],
@@ -2452,68 +2457,68 @@
     {
       "name": "TypeScript",
       "color": "#3178c6",
-      "size": 7521259,
-      "pct": 39.36265468386115
+      "size": 7844232,
+      "pct": 40.18248990677876
     },
     {
       "name": "Python",
       "color": "#3572A5",
-      "size": 5692375,
-      "pct": 29.791154839375178
+      "size": 5702075,
+      "pct": 29.209178302629947
     },
     {
       "name": "TeX",
       "color": "#3D6117",
       "size": 2607276,
-      "pct": 13.645229456068295
+      "pct": 13.355908080508904
     },
     {
       "name": "BibTeX Style",
       "color": "#8A8A9C",
       "size": 938916,
-      "pct": 4.913835075371314
+      "pct": 4.809646462944121
     },
     {
       "name": "HTML",
       "color": "#e34c26",
-      "size": 856663,
-      "pct": 4.4833624064057025
+      "size": 916291,
+      "pct": 4.693748713599014
     },
     {
       "name": "JavaScript",
       "color": "#f1e05a",
-      "size": 554943,
-      "pct": 2.9043049412639506
+      "size": 568278,
+      "pct": 2.911033865296746
     },
     {
       "name": "CSS",
       "color": "#663399",
-      "size": 486934,
-      "pct": 2.5483785222435826
+      "size": 494005,
+      "pct": 2.530566526639988
     },
     {
       "name": "Shell",
       "color": "#89e051",
-      "size": 234729,
-      "pct": 1.2284587688428286
+      "size": 235939,
+      "pct": 1.2086099042092935
     },
     {
       "name": "PLpgSQL",
       "color": "#336790",
       "size": 197660,
-      "pct": 1.0344574392148966
+      "pct": 1.0125237186985152
     },
     {
       "name": "Batchfile",
       "color": "#C1F12E",
       "size": 10522,
-      "pct": 0.05506709083992281
+      "pct": 0.05389949695510359
     },
     {
       "name": "Makefile",
       "color": "#427819",
       "size": 6324,
-      "pct": 0.03309677651317923
+      "pct": 0.03239502173960037
     }
   ]
 }
