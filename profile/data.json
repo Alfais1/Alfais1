@@ -295,18 +295,18 @@
   "name": null,
   "url": "https://github.com/Alfais1",
   "since": "2024",
-  "fetchedAt": "2026-09-17T08:37:55.057Z",
+  "fetchedAt": "2026-09-18T08:13:11.612Z",
   "all": {
-    "commits": 143,
+    "commits": 151,
     "prs": 2,
     "issues": 0,
     "reviews": 0,
     "private": 0,
-    "contributions": 165
+    "contributions": 173
   },
   "lastYear": {
-    "contributions": 136,
-    "commits": 115,
+    "contributions": 144,
+    "commits": 123,
     "private": 0
   },
   "repos": {
@@ -316,11 +316,20 @@
   },
   "repoList": [
     {
+      "name": "sarap",
+      "url": "https://github.com/Alfais1/sarap",
+      "isPrivate": true,
+      "description": "Market intelligence over Krisha (property), Kolesa (cars) and Goszakup (procurement) in Kazakhstan",
+      "pushedAt": "2026-09-18T07:49:37Z",
+      "language": "TypeScript",
+      "color": "#3178c6"
+    },
+    {
       "name": "Alfais1",
       "url": "https://github.com/Alfais1/Alfais1",
       "isPrivate": false,
       "description": "",
-      "pushedAt": "2026-09-16T08:33:35Z",
+      "pushedAt": "2026-09-17T08:37:56Z",
       "language": "JavaScript",
       "color": "#f1e05a"
     },
@@ -339,15 +348,6 @@
       "isPrivate": true,
       "description": "WONK archive search demo: hybrid search, citing assistant, scan viewer on Cloudflare",
       "pushedAt": "2026-09-11T12:14:09Z",
-      "language": "TypeScript",
-      "color": "#3178c6"
-    },
-    {
-      "name": "sarap",
-      "url": "https://github.com/Alfais1/sarap",
-      "isPrivate": true,
-      "description": "Market intelligence over Krisha (property), Kolesa (cars) and Goszakup (procurement) in Kazakhstan",
-      "pushedAt": "2026-09-08T12:01:02Z",
       "language": "TypeScript",
       "color": "#3178c6"
     },
@@ -2411,13 +2411,13 @@
       },
       {
         "date": "2026-09-09",
-        "count": 0,
-        "level": 0
+        "count": 1,
+        "level": 1
       },
       {
         "date": "2026-09-10",
-        "count": 0,
-        "level": 0
+        "count": 4,
+        "level": 1
       },
       {
         "date": "2026-09-11",
@@ -2455,6 +2455,11 @@
         "date": "2026-09-17",
         "count": 0,
         "level": 0
+      },
+      {
+        "date": "2026-09-18",
+        "count": 3,
+        "level": 1
       }
     ]
   ],
@@ -2462,68 +2467,68 @@
     {
       "name": "TypeScript",
       "color": "#3178c6",
-      "size": 7938274,
-      "pct": 40.46611811090413
+      "size": 8200108,
+      "pct": 40.98818820948307
     },
     {
       "name": "Python",
       "color": "#3572A5",
-      "size": 5702075,
-      "pct": 29.06687781591233
+      "size": 5710120,
+      "pct": 28.541998868640935
     },
     {
       "name": "TeX",
       "color": "#3D6117",
       "size": 2607276,
-      "pct": 13.29084112789829
+      "pct": 13.032452670387778
     },
     {
       "name": "BibTeX Style",
       "color": "#8A8A9C",
       "size": 938916,
-      "pct": 4.786214957082315
+      "pct": 4.693165714511932
     },
     {
       "name": "HTML",
       "color": "#e34c26",
-      "size": 916295,
-      "pct": 4.670902225651432
+      "size": 850479,
+      "pct": 4.251113926818153
     },
     {
       "name": "JavaScript",
       "color": "#f1e05a",
-      "size": 568906,
-      "pct": 2.900053259688696
+      "size": 748736,
+      "pct": 3.7425521818999843
     },
     {
       "name": "CSS",
       "color": "#663399",
       "size": 494005,
-      "pct": 2.518238180916556
+      "pct": 2.469280882206147
     },
     {
       "name": "Shell",
       "color": "#89e051",
-      "size": 235939,
-      "pct": 1.2027218310893033
+      "size": 236666,
+      "pct": 1.1829735109324806
     },
     {
       "name": "PLpgSQL",
       "color": "#336790",
-      "size": 198556,
-      "pct": 1.0121583794699804
+      "size": 202875,
+      "pct": 1.0140694101832413
     },
     {
       "name": "Batchfile",
       "color": "#C1F12E",
       "size": 10522,
-      "pct": 0.05363691084018178
+      "pct": 0.05259415075267068
     },
     {
       "name": "Makefile",
       "color": "#427819",
       "size": 6324,
-      "pct": 0.032237200546788594
+      "pct": 0.03161047418360477
     }
   ]
 }
