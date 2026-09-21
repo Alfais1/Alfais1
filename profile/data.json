@@ -5,11 +5,11 @@
       "items": [
         {
           "name": "React",
-          "repos": 10
+          "repos": 11
         },
         {
           "name": "Vite",
-          "repos": 9
+          "repos": 10
         },
         {
           "name": "Tailwind",
@@ -24,15 +24,19 @@
           "repos": 3
         },
         {
+          "name": "React Router",
+          "repos": 3
+        },
+        {
           "name": "Radix UI",
           "repos": 2
         },
         {
-          "name": "React Router",
+          "name": "shadcn/ui",
           "repos": 2
         },
         {
-          "name": "shadcn/ui",
+          "name": "TanStack Query",
           "repos": 2
         },
         {
@@ -53,10 +57,6 @@
         },
         {
           "name": "Recharts",
-          "repos": 1
-        },
-        {
-          "name": "TanStack Query",
           "repos": 1
         }
       ]
@@ -110,12 +110,12 @@
       "group": "BACKEND & AI",
       "items": [
         {
-          "name": "Requests",
+          "name": "FastAPI",
           "repos": 4
         },
         {
-          "name": "FastAPI",
-          "repos": 3
+          "name": "Requests",
+          "repos": 4
         },
         {
           "name": "Hono",
@@ -250,7 +250,7 @@
       "items": [
         {
           "name": "TypeScript",
-          "repos": 13
+          "repos": 14
         },
         {
           "name": "Cloudflare Workers",
@@ -277,6 +277,10 @@
           "repos": 2
         },
         {
+          "name": "Docker",
+          "repos": 1
+        },
+        {
           "name": "Playwright",
           "repos": 1
         },
@@ -295,43 +299,52 @@
   "name": null,
   "url": "https://github.com/Alfais1",
   "since": "2024",
-  "fetchedAt": "2026-09-20T08:33:16.923Z",
+  "fetchedAt": "2026-09-21T08:54:01.118Z",
   "all": {
-    "commits": 151,
+    "commits": 162,
     "prs": 2,
     "issues": 0,
     "reviews": 0,
     "private": 0,
-    "contributions": 173
+    "contributions": 185
   },
   "lastYear": {
-    "contributions": 144,
-    "commits": 123,
+    "contributions": 156,
+    "commits": 134,
     "private": 0
   },
   "repos": {
-    "total": 21,
-    "private": 20,
+    "total": 22,
+    "private": 21,
     "stars": 4
   },
   "repoList": [
-    {
-      "name": "Alfais1",
-      "url": "https://github.com/Alfais1/Alfais1",
-      "isPrivate": false,
-      "description": "",
-      "pushedAt": "2026-09-19T08:01:13Z",
-      "language": "JavaScript",
-      "color": "#f1e05a"
-    },
     {
       "name": "sarap",
       "url": "https://github.com/Alfais1/sarap",
       "isPrivate": true,
       "description": "Market intelligence over Krisha (property), Kolesa (cars) and Goszakup (procurement) in Kazakhstan",
-      "pushedAt": "2026-09-18T07:49:37Z",
+      "pushedAt": "2026-09-21T08:35:55Z",
       "language": "TypeScript",
       "color": "#3178c6"
+    },
+    {
+      "name": "shadow-detect",
+      "url": "https://github.com/Alfais1/shadow-detect",
+      "isPrivate": true,
+      "description": "",
+      "pushedAt": "2026-09-21T07:22:04Z",
+      "language": "Python",
+      "color": "#3572A5"
+    },
+    {
+      "name": "Alfais1",
+      "url": "https://github.com/Alfais1/Alfais1",
+      "isPrivate": false,
+      "description": "",
+      "pushedAt": "2026-09-20T08:33:18Z",
+      "language": "JavaScript",
+      "color": "#f1e05a"
     },
     {
       "name": "TGTGkz",
@@ -2401,8 +2414,8 @@
       },
       {
         "date": "2026-09-14",
-        "count": 0,
-        "level": 0
+        "count": 1,
+        "level": 1
       },
       {
         "date": "2026-09-15",
@@ -2421,8 +2434,8 @@
       },
       {
         "date": "2026-09-18",
-        "count": 3,
-        "level": 1
+        "count": 6,
+        "level": 2
       },
       {
         "date": "2026-09-19",
@@ -2435,6 +2448,11 @@
         "date": "2026-09-20",
         "count": 0,
         "level": 0
+      },
+      {
+        "date": "2026-09-21",
+        "count": 8,
+        "level": 2
       }
     ]
   ],
@@ -2442,68 +2460,74 @@
     {
       "name": "TypeScript",
       "color": "#3178c6",
-      "size": 8200108,
-      "pct": 40.98818820948307
+      "size": 8339916,
+      "pct": 40.38958618127581
     },
     {
       "name": "Python",
       "color": "#3572A5",
-      "size": 5710120,
-      "pct": 28.541998868640935
+      "size": 6173743,
+      "pct": 29.89897319823704
     },
     {
       "name": "TeX",
       "color": "#3D6117",
       "size": 2607276,
-      "pct": 13.032452670387778
+      "pct": 12.626841649289041
     },
     {
       "name": "BibTeX Style",
       "color": "#8A8A9C",
       "size": 938916,
-      "pct": 4.693165714511932
+      "pct": 4.547099598962239
     },
     {
       "name": "HTML",
       "color": "#e34c26",
-      "size": 850479,
-      "pct": 4.251113926818153
+      "size": 850824,
+      "pct": 4.120476665843854
     },
     {
       "name": "JavaScript",
       "color": "#f1e05a",
       "size": 748736,
-      "pct": 3.7425521818999843
+      "pct": 3.6260721569646175
     },
     {
       "name": "CSS",
       "color": "#663399",
-      "size": 494005,
-      "pct": 2.469280882206147
+      "size": 506435,
+      "pct": 2.452626630497767
     },
     {
       "name": "Shell",
       "color": "#89e051",
-      "size": 236666,
-      "pct": 1.1829735109324806
+      "size": 259725,
+      "pct": 1.2578286485057955
     },
     {
       "name": "PLpgSQL",
       "color": "#336790",
       "size": 202875,
-      "pct": 1.0140694101832413
+      "pct": 0.9825083725694995
     },
     {
       "name": "Batchfile",
       "color": "#C1F12E",
       "size": 10522,
-      "pct": 0.05259415075267068
+      "pct": 0.050957254941103015
     },
     {
       "name": "Makefile",
       "color": "#427819",
-      "size": 6324,
-      "pct": 0.03161047418360477
+      "size": 8609,
+      "pct": 0.041692739763158695
+    },
+    {
+      "name": "Dockerfile",
+      "color": "#384d54",
+      "size": 1102,
+      "pct": 0.005336903150075605
     }
   ]
 }
