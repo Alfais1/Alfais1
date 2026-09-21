@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://alfais.uk"><img src="https://img.shields.io/badge/PORTFOLIO-alfais.uk-F5E900?style=for-the-badge&labelColor=08080C&logo=safari&logoColor=F5E900" alt="portfolio"/></a>&nbsp;
-  <a href="https://t.me/alfais"><img src="https://img.shields.io/badge/TELEGRAM-@alfais-00F0FF?style=for-the-badge&labelColor=08080C&logo=telegram&logoColor=00F0FF" alt="telegram"/></a>&nbsp;
+  <a href="https://t.me/alfaisat"><img src="https://img.shields.io/badge/TELEGRAM-@alfaisat-00F0FF?style=for-the-badge&labelColor=08080C&logo=telegram&logoColor=00F0FF" alt="telegram"/></a>&nbsp;
   <a href="mailto:alfais2004@gmail.com"><img src="https://img.shields.io/badge/MAIL-say%20hi-FF2A6D?style=for-the-badge&labelColor=08080C&logo=gmail&logoColor=FF2A6D" alt="email"/></a>
 </p>
 
