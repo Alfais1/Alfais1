@@ -370,8 +370,20 @@ function banner() {
 </g>`;
 
   const name = cfg.name.toUpperCase();
-  const tag = "// " + cfg.tagline;
-  const tagW = tag.length * 12.1;
+  // The left of the banner is the only reliably dark area, so the tagline wraps
+  // on its own separators rather than running out over the bright artwork.
+  const CH = 12.1, TAG_MAX = 560, TAG_SIZE = 20;
+  const tagLines = [];
+  let cur = "// ";
+  for (const part of cfg.tagline.split(" · ")) {
+    const next = cur === "// " ? cur + part : `${cur} · ${part}`;
+    if (next.length * CH > TAG_MAX && cur !== "// ") { tagLines.push(cur); cur = part; }
+    else cur = next;
+  }
+  tagLines.push(cur);
+  const tagGeo = tagLines.map((t, i) => ({ text: t, w: t.length * CH, y: 258 + i * 28 }));
+  const last = tagGeo[tagGeo.length - 1];
+  const ruleY = last.y + 32;
   const title = `
 <g transform="translate(0 ${Math.round((H - 420) / 2)})">
 <g class="glitch">
@@ -381,15 +393,13 @@ function banner() {
   <g clip-path="url(#slice)"><text class="gs" x="72" y="212">${esc(name)}</text></g>
 </g>
 <g>
-  <g clip-path="url(#typeClip)">
-    <text x="72" y="258" font-size="20" fill="${T.cyan}" textLength="${tagW}" lengthAdjust="spacingAndGlyphs">${esc(tag)}</text>
-  </g>
-  <rect x="${74 + tagW}" y="240" width="11" height="22" fill="${T.cyan}">
-    ${growAlways("x", 74, 74 + tagW, 0.5, 2.6)}
-    <animate attributeName="opacity" values="1;1;0;0" dur="1s" repeatCount="indefinite"/>
+  ${tagGeo.map((g, i) => `<g clip-path="url(#typeClip${i})"><text x="72" y="${g.y}" font-size="${TAG_SIZE}" fill="${T.cyan}" textLength="${g.w.toFixed(1)}" lengthAdjust="spacingAndGlyphs">${esc(g.text)}</text></g>`).join("\n  ")}
+  <rect x="${(74 + last.w).toFixed(1)}" y="${last.y - 18}" width="11" height="22" fill="${T.cyan}" opacity="0">
+    ${growAlways("x", 74, 74 + last.w, 0.5 + (tagGeo.length - 1) * 1.4, 1.4)}
+    <animate attributeName="opacity" values="1;1;0;0" dur="1s" begin="${(0.5 + (tagGeo.length - 1) * 1.4).toFixed(2)}s" repeatCount="indefinite"/>
   </rect>
 </g>
-<line x1="72" y1="290" x2="${72 + 56}" y2="290" stroke="${T.yellow}" stroke-width="2"/>
+<line x1="72" y1="${ruleY}" x2="${72 + 56}" y2="${ruleY}" stroke="${T.yellow}" stroke-width="2"/>
 </g>`;
 
   const hud = `
@@ -422,7 +432,7 @@ ${scanDef}
 <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75"><stop offset="0.6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.55"/></radialGradient>
 <linearGradient id="readable" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${T.wash}" stop-opacity="${dk}"/><stop offset="0.4" stop-color="${T.wash}" stop-opacity="${(dk * 0.55).toFixed(2)}"/><stop offset="0.62" stop-color="${T.wash}" stop-opacity="0"/></linearGradient>
 <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0.72" stop-color="${T.wash}" stop-opacity="0"/><stop offset="1" stop-color="${T.wash}" stop-opacity="0.8"/></linearGradient>
-<clipPath id="typeClip"><rect x="72" y="236" width="${tagW + 4}" height="30">${growAlways("width", 0, tagW + 4, 0.5, 2.6)}</rect></clipPath>
+${tagGeo.map((g, i) => `<clipPath id="typeClip${i}"><rect x="72" y="${g.y - 22}" width="${(g.w + 4).toFixed(1)}" height="30">${growAlways("width", 0, g.w + 4, 0.5 + i * 1.4, 1.4)}</rect></clipPath>`).join("")}
 <clipPath id="slice"><rect x="60" y="150" width="600" height="18"/></clipPath>`;
 
   const style = `

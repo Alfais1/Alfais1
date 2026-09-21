@@ -11,7 +11,7 @@
 <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75"><stop offset="0.6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.55"/></radialGradient>
 <linearGradient id="readable" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#070B18" stop-opacity="0.7"/><stop offset="0.4" stop-color="#070B18" stop-opacity="0.39"/><stop offset="0.62" stop-color="#070B18" stop-opacity="0"/></linearGradient>
 <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0.72" stop-color="#070B18" stop-opacity="0"/><stop offset="1" stop-color="#070B18" stop-opacity="0.8"/></linearGradient>
-<clipPath id="typeClip"><rect x="72" y="236" width="584.8" height="30"><animate attributeName="width" values="0;0;584.8" keyTimes="0;0.161;1" dur="3.10s" begin="0s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;0.2 0.8 0.2 1"/></rect></clipPath>
+<clipPath id="typeClip0"><rect x="72" y="236" width="427.5" height="30"><animate attributeName="width" values="0;0;427.5" keyTimes="0;0.263;1" dur="1.90s" begin="0s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;0.2 0.8 0.2 1"/></rect></clipPath><clipPath id="typeClip1"><rect x="72" y="264" width="427.5" height="30"><animate attributeName="width" values="0;0;427.5" keyTimes="0;0.576;1" dur="3.30s" begin="0s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;0.2 0.8 0.2 1"/></rect></clipPath>
 <clipPath id="slice"><rect x="60" y="150" width="600" height="18"/></clipPath></defs><style>
 .glitch text{font-size:104px;font-weight:800;letter-spacing:6px}
 .gt{fill:#F5E900}
@@ -37,15 +37,14 @@
   <g clip-path="url(#slice)"><text class="gs" x="72" y="212">ALFAIS</text></g>
 </g>
 <g>
-  <g clip-path="url(#typeClip)">
-    <text x="72" y="258" font-size="20" fill="#00F0FF" textLength="580.8" lengthAdjust="spacingAndGlyphs">// quant research · archives · bots · dashboards</text>
-  </g>
-  <rect x="654.8" y="240" width="11" height="22" fill="#00F0FF">
-    <animate attributeName="x" values="74;74;654.8" keyTimes="0;0.161;1" dur="3.10s" begin="0s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;0.2 0.8 0.2 1"/>
-    <animate attributeName="opacity" values="1;1;0;0" dur="1s" repeatCount="indefinite"/>
+  <g clip-path="url(#typeClip0)"><text x="72" y="258" font-size="20" fill="#00F0FF" textLength="423.5" lengthAdjust="spacingAndGlyphs">// quant research · agentic systems</text></g>
+  <g clip-path="url(#typeClip1)"><text x="72" y="286" font-size="20" fill="#00F0FF" textLength="423.5" lengthAdjust="spacingAndGlyphs">market intelligence · social graphs</text></g>
+  <rect x="497.5" y="268" width="11" height="22" fill="#00F0FF" opacity="0">
+    <animate attributeName="x" values="74;74;497.5" keyTimes="0;0.576;1" dur="3.30s" begin="0s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;0.2 0.8 0.2 1"/>
+    <animate attributeName="opacity" values="1;1;0;0" dur="1s" begin="1.90s" repeatCount="indefinite"/>
   </rect>
 </g>
-<line x1="72" y1="290" x2="128" y2="290" stroke="#F5E900" stroke-width="2"/>
+<line x1="72" y1="318" x2="128" y2="318" stroke="#F5E900" stroke-width="2"/>
 </g>
 
 <text x="72" y="46" font-size="11" fill="#8A8A9C" font-weight="500" text-anchor="start" letter-spacing="1.5" textLength="181.5" lengthAdjust="spacing" >SYS.PROFILE // ALFAIS1</text>

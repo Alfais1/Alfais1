@@ -299,19 +299,19 @@
   "name": null,
   "url": "https://github.com/Alfais1",
   "since": "2024",
-  "fetchedAt": "2026-09-21T08:54:01.118Z",
+  "fetchedAt": "2026-09-21T10:35:52.663Z",
   "all": {
     "commits": 162,
     "prs": 2,
     "issues": 0,
     "reviews": 0,
-    "private": 0,
+    "private": 178,
     "contributions": 185
   },
   "lastYear": {
     "contributions": 156,
-    "commits": 134,
-    "private": 0
+    "commits": 5,
+    "private": 150
   },
   "repos": {
     "total": 22,
@@ -319,6 +319,15 @@
     "stars": 4
   },
   "repoList": [
+    {
+      "name": "Alfais1",
+      "url": "https://github.com/Alfais1/Alfais1",
+      "isPrivate": false,
+      "description": "",
+      "pushedAt": "2026-09-21T08:54:02Z",
+      "language": "JavaScript",
+      "color": "#f1e05a"
+    },
     {
       "name": "sarap",
       "url": "https://github.com/Alfais1/sarap",
@@ -336,15 +345,6 @@
       "pushedAt": "2026-09-21T07:22:04Z",
       "language": "Python",
       "color": "#3572A5"
-    },
-    {
-      "name": "Alfais1",
-      "url": "https://github.com/Alfais1/Alfais1",
-      "isPrivate": false,
-      "description": "",
-      "pushedAt": "2026-09-20T08:33:18Z",
-      "language": "JavaScript",
-      "color": "#f1e05a"
     },
     {
       "name": "TGTGkz",

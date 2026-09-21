@@ -1,6 +1,6 @@
 <!-- Every graphic is generated: edit profile/config.json + profile/projects.json, then `node profile/build.mjs` -->
 <div align="center">
-  <a href="https://alfais.uk"><img src="assets/banner.svg" width="100%" alt="ALFAIS — quant research · archives · bots · dashboards"/></a>
+  <a href="https://alfais.uk"><img src="assets/banner.svg" width="100%" alt="ALFAIS — quant research · agentic systems · market intelligence · social graphs"/></a>
 </div>
 
 <p align="center">
