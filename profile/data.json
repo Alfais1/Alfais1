@@ -299,18 +299,18 @@
   "name": null,
   "url": "https://github.com/Alfais1",
   "since": "2024",
-  "fetchedAt": "2026-09-24T08:25:30.895Z",
+  "fetchedAt": "2026-09-25T08:47:27.765Z",
   "all": {
-    "commits": 165,
+    "commits": 169,
     "prs": 2,
     "issues": 0,
     "reviews": 0,
     "private": 0,
-    "contributions": 188
+    "contributions": 191
   },
   "lastYear": {
-    "contributions": 159,
-    "commits": 137,
+    "contributions": 162,
+    "commits": 140,
     "private": 0
   },
   "repos": {
@@ -320,22 +320,22 @@
   },
   "repoList": [
     {
-      "name": "Alfais1",
-      "url": "https://github.com/Alfais1/Alfais1",
-      "isPrivate": false,
-      "description": "",
-      "pushedAt": "2026-09-23T08:32:41Z",
-      "language": "JavaScript",
-      "color": "#f1e05a"
-    },
-    {
       "name": "sarap",
       "url": "https://github.com/Alfais1/sarap",
       "isPrivate": true,
       "description": "Market intelligence over Krisha (property), Kolesa (cars) and Goszakup (procurement) in Kazakhstan",
-      "pushedAt": "2026-09-22T07:18:45Z",
+      "pushedAt": "2026-09-24T10:31:17Z",
       "language": "TypeScript",
       "color": "#3178c6"
+    },
+    {
+      "name": "Alfais1",
+      "url": "https://github.com/Alfais1/Alfais1",
+      "isPrivate": false,
+      "description": "",
+      "pushedAt": "2026-09-24T08:25:32Z",
+      "language": "JavaScript",
+      "color": "#f1e05a"
     },
     {
       "name": "shadow-detect",
@@ -2466,6 +2466,11 @@
       },
       {
         "date": "2026-09-24",
+        "count": 3,
+        "level": 1
+      },
+      {
+        "date": "2026-09-25",
         "count": 0,
         "level": 0
       }
@@ -2475,74 +2480,74 @@
     {
       "name": "TypeScript",
       "color": "#3178c6",
-      "size": 8340475,
-      "pct": 40.38650590330898
+      "size": 8345317,
+      "pct": 40.40047965577872
     },
     {
       "name": "Python",
       "color": "#3572A5",
       "size": 6173743,
-      "pct": 29.894689225135554
+      "pct": 29.88768173473893
     },
     {
       "name": "TeX",
       "color": "#3D6117",
       "size": 2607276,
-      "pct": 12.625032455052718
+      "pct": 12.622073073437488
     },
     {
       "name": "BibTeX Style",
       "color": "#8A8A9C",
       "size": 938916,
-      "pct": 4.546448083198049
+      "pct": 4.545382369116132
     },
     {
       "name": "HTML",
       "color": "#e34c26",
       "size": 850824,
-      "pct": 4.119886277301587
+      "pct": 4.118920551807472
     },
     {
       "name": "JavaScript",
       "color": "#f1e05a",
       "size": 750980,
-      "pct": 3.636418573674398
+      "pct": 3.6355661758440934
     },
     {
       "name": "CSS",
       "color": "#663399",
       "size": 506435,
-      "pct": 2.452275214198506
+      "pct": 2.451700386513094
     },
     {
       "name": "Shell",
       "color": "#89e051",
       "size": 259881,
-      "pct": 1.2584038128113615
+      "pct": 1.2581088355808927
     },
     {
       "name": "PLpgSQL",
       "color": "#336790",
       "size": 202875,
-      "pct": 0.9823675971852692
+      "pct": 0.9821373244618637
     },
     {
       "name": "Batchfile",
       "color": "#C1F12E",
       "size": 10522,
-      "pct": 0.05094995370343021
+      "pct": 0.0509380107356142
     },
     {
       "name": "Makefile",
       "color": "#427819",
       "size": 8609,
-      "pct": 0.04168676596016258
+      "pct": 0.041676994337854274
     },
     {
       "name": "Dockerfile",
       "color": "#384d54",
       "size": 1102,
-      "pct": 0.005336138469984802
+      "pct": 0.005334887647847068
     }
   ]
 }
