@@ -9,7 +9,7 @@
         },
         {
           "name": "Vite",
-          "repos": 10
+          "repos": 11
         },
         {
           "name": "Tailwind",
@@ -66,11 +66,11 @@
       "items": [
         {
           "name": "GSAP",
-          "repos": 7
+          "repos": 8
         },
         {
           "name": "Lenis",
-          "repos": 6
+          "repos": 7
         },
         {
           "name": "Three.js",
@@ -250,11 +250,11 @@
       "items": [
         {
           "name": "TypeScript",
-          "repos": 14
+          "repos": 15
         },
         {
           "name": "Cloudflare Workers",
-          "repos": 6
+          "repos": 7
         },
         {
           "name": "GitHub Actions",
@@ -299,32 +299,41 @@
   "name": null,
   "url": "https://github.com/Alfais1",
   "since": "2024",
-  "fetchedAt": "2026-09-28T09:43:24.140Z",
+  "fetchedAt": "2026-09-29T09:47:23.448Z",
   "all": {
-    "commits": 169,
+    "commits": 186,
     "prs": 2,
     "issues": 0,
     "reviews": 0,
     "private": 0,
-    "contributions": 191
+    "contributions": 201
   },
   "lastYear": {
-    "contributions": 162,
-    "commits": 140,
+    "contributions": 172,
+    "commits": 149,
     "private": 0
   },
   "repos": {
-    "total": 22,
-    "private": 21,
+    "total": 23,
+    "private": 22,
     "stars": 4
   },
   "repoList": [
+    {
+      "name": "abuaman",
+      "url": "https://github.com/Alfais1/abuaman",
+      "isPrivate": true,
+      "description": "abuaman.com: a birthday record for Abu. Side A portfolio, Side B haven, an 8-bit town, mini-games and a what-if AI playground.",
+      "pushedAt": "2026-09-29T05:54:38Z",
+      "language": "TypeScript",
+      "color": "#3178c6"
+    },
     {
       "name": "Alfais1",
       "url": "https://github.com/Alfais1/Alfais1",
       "isPrivate": false,
       "description": "",
-      "pushedAt": "2026-09-27T09:13:31Z",
+      "pushedAt": "2026-09-28T09:43:25Z",
       "language": "JavaScript",
       "color": "#f1e05a"
     },
@@ -2451,8 +2460,13 @@
       },
       {
         "date": "2026-09-28",
-        "count": 0,
-        "level": 0
+        "count": 8,
+        "level": 2
+      },
+      {
+        "date": "2026-09-29",
+        "count": 2,
+        "level": 1
       }
     ]
   ],
@@ -2460,74 +2474,74 @@
     {
       "name": "TypeScript",
       "color": "#3178c6",
-      "size": 8345317,
-      "pct": 40.40047965577872
+      "size": 9266635,
+      "pct": 42.715396619113974
     },
     {
       "name": "Python",
       "color": "#3572A5",
       "size": 6173743,
-      "pct": 29.88768173473893
+      "pct": 28.458429717958953
     },
     {
       "name": "TeX",
       "color": "#3D6117",
       "size": 2607276,
-      "pct": 12.622073073437488
+      "pct": 12.018475793586022
     },
     {
       "name": "BibTeX Style",
       "color": "#8A8A9C",
       "size": 938916,
-      "pct": 4.545382369116132
+      "pct": 4.3280186747435305
     },
     {
       "name": "HTML",
       "color": "#e34c26",
-      "size": 850824,
-      "pct": 4.118920551807472
+      "size": 877171,
+      "pct": 4.043399482960624
     },
     {
       "name": "JavaScript",
       "color": "#f1e05a",
-      "size": 750980,
-      "pct": 3.6355661758440934
+      "size": 753441,
+      "pct": 3.47305479757235
     },
     {
       "name": "CSS",
       "color": "#663399",
-      "size": 506435,
-      "pct": 2.451700386513094
+      "size": 593728,
+      "pct": 2.7368432018605784
     },
     {
       "name": "Shell",
       "color": "#89e051",
       "size": 259881,
-      "pct": 1.2581088355808927
+      "pct": 1.1979450996798686
     },
     {
       "name": "PLpgSQL",
       "color": "#336790",
       "size": 202875,
-      "pct": 0.9821373244618637
+      "pct": 0.9351707592996538
     },
     {
       "name": "Batchfile",
       "color": "#C1F12E",
       "size": 10522,
-      "pct": 0.0509380107356142
+      "pct": 0.04850211573309159
     },
     {
       "name": "Makefile",
       "color": "#427819",
       "size": 8609,
-      "pct": 0.041676994337854274
+      "pct": 0.039683968289886476
     },
     {
       "name": "Dockerfile",
       "color": "#384d54",
       "size": 1102,
-      "pct": 0.005334887647847068
+      "pct": 0.005079769201469962
     }
   ]
 }
