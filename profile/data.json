@@ -299,7 +299,7 @@
   "name": null,
   "url": "https://github.com/Alfais1",
   "since": "2024",
-  "fetchedAt": "2026-09-29T09:47:23.448Z",
+  "fetchedAt": "2026-09-30T09:40:18.554Z",
   "all": {
     "commits": 186,
     "prs": 2,
@@ -320,6 +320,15 @@
   },
   "repoList": [
     {
+      "name": "Alfais1",
+      "url": "https://github.com/Alfais1/Alfais1",
+      "isPrivate": false,
+      "description": "",
+      "pushedAt": "2026-09-29T09:47:24Z",
+      "language": "JavaScript",
+      "color": "#f1e05a"
+    },
+    {
       "name": "abuaman",
       "url": "https://github.com/Alfais1/abuaman",
       "isPrivate": true,
@@ -327,15 +336,6 @@
       "pushedAt": "2026-09-29T05:54:38Z",
       "language": "TypeScript",
       "color": "#3178c6"
-    },
-    {
-      "name": "Alfais1",
-      "url": "https://github.com/Alfais1/Alfais1",
-      "isPrivate": false,
-      "description": "",
-      "pushedAt": "2026-09-28T09:43:25Z",
-      "language": "JavaScript",
-      "color": "#f1e05a"
     },
     {
       "name": "sarap",
@@ -2467,6 +2467,11 @@
         "date": "2026-09-29",
         "count": 2,
         "level": 1
+      },
+      {
+        "date": "2026-09-30",
+        "count": 0,
+        "level": 0
       }
     ]
   ],
